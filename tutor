@@ -225,5 +225,4 @@ Move the cursor to the first line and press "J":
 # exit file
 To exit, use the "ZZ" command.  This command writes the file and exits.
 
-
 ################### EOF ####################
