@@ -1,12 +1,13 @@
-==============================
-# instructions for moc
-==============================
-=======
-# instructions for moc
->>>>>>> 7d537856ddeca3aa597eb7bb384f9a7478a0f084
+# ===========================================================================
+# INSTRUCTIONS FOR MOC
+# ===========================================================================
+# Maintainer: WILLENBROCK                                                       
+# Last change: пятница, 22 мая 2020 г. 21:04:50 (MSK)                           
+# To use it, copy it to                                                         
+#            for Linux:  
+# Documentation see at:  http://moc.daper.net
+# ===========================================================================
 
-# documentation see at:
-http://moc.daper.net
 
 # config and keymap example files are in:
 cd /usr/share/doc/moc/examples
