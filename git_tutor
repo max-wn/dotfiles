@@ -2,9 +2,6 @@
 # Git commands                                                             |
 # =========================================================================|
 
-# vim by defolt command
-sudo update-alternatives --config editor
-
 # git commands below:
 
 git config --global user.name 'name  # add name
@@ -66,5 +63,7 @@ git reset --soft HEAD~2  # delete all commit log 2 commits back
 git push --set-upstream origin fix_error  # push and generation branch in github
 
 git push origin --delete fix_error  # delete global branch
+
+git reset 'file  # remove from the done position
 
 ######### EOF ##########
