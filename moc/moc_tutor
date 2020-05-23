@@ -1,11 +1,12 @@
 # ===========================================================================
 # INSTRUCTIONS FOR MOC
 # ===========================================================================
-# Maintainer: WILLENBROCK                                                       
-# Last change: пятница, 22 мая 2020 г. 21:04:50 (MSK)                           
-# To use it, copy it to                                                         
-#            for Linux:  
-# Documentation see at:  http://moc.daper.net
+#  Maintainer: WILLENBROCK                                                       
+# Last change: 23.05.2020                           
+# To use config and keymap files, copy them to                                                         
+#   for Linux: ~/.moc/config
+#              ~/.moc/keymap 
+# Documentation see at: http://moc.daper.net
 # ===========================================================================
 
 
