@@ -1,4 +1,3 @@
-P>           " disable Down arrow key in normal mode
 # =========================================================================|
 # Git commands                                                             |
 # =========================================================================|
@@ -66,5 +65,9 @@ git push --set-upstream origin fix_error  # push and generation branch in github
 git push origin --delete fix_error  # delete global branch
 
 git reset 'file  # remove from the done position
+
+git branch -a  # 
+
+git remote -v  # 
 
 ########## EOF ###########
