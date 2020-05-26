@@ -1,11 +1,16 @@
-" #################### my vimrc file ####################
-" Maintainer: WILLENBROCK 
-" Last change: 18.05.2020
+" ===========================================================================
+" MY VIMRC FILE
+" ===========================================================================
+" Maintainer: WILLENBROCK
+" Last change: пятница, 22 мая 2020 г. 21:04:50 (MSK)
 " To use it, copy it to
 "    for Unix and OS/2:  ~/.vimrc
 "            for Amiga:  s:.vimrc
 " for MS-DOS and Win32:  $VIM\_vimrc
 "          for OpenVMS:  sys$login:.vimrc
+" to make vim by defolt in linux execute this command in terminal:
+"                        sudo update-alternatives --config editor
+" ===========================================================================
 
 " When started as "evim", evim.vim will already have done these settings, bail out.
 if v:progname =~? "evim"
