@@ -12,7 +12,8 @@
 "                        sudo update-alternatives --config editor
 " ===========================================================================
 
-" When started as "evim", evim.vim will already have done these settings, bail out.
+" When started as "evim", evim.vim will already have done these settings,
+" bail out.
 if v:progname =~? "evim"
     finish
 endif
@@ -50,14 +51,15 @@ augroup END
     set undofile
     set incsearch
     set hidden
-    set showcmd                " Display an incomplete command in the lower right corner
+    set showcmd                " Display an incomplete command
+                               " in the lower right corner
 
 " Maping keys
-    map <Down> <NOP>           " disable Down arrow key in normal mode
+    map <Down> <NOP>          " disable Down arrow key in normal mode
     map <Up> <NOP>
     map <Left> <NOP>
     map <Right> <NOP>
-    inore jj <Esc>             " type jj instead of Esc to return in normal mode
+    inore jj <Esc>            " type jj instead of Esc to return in normal mode
 
 " Give more space for displaying messages.
     set cmdheight=2
@@ -70,6 +72,13 @@ augroup END
     set shortmess+=c
 
     set colorcolumn=80
-    highlight ColorColumn ctermbg=0 guibg=lightgrey
+    highlight ColorColumn ctermbg=1 guibg=lightgray
 
-" #################### EOF ####################
+" AUTORUN
+" Run xrdb whenever Xdefaults or Xresources are updated.
+    autocmd BufWritePost *Xresources,*Xdefaults !xrdb %
+
+" Reload the settings file without restarting Vim.
+    autocmd BufWritePost .vimrc source $MYVIMRC
+
+"######################EOF######################################################
