@@ -66,10 +66,8 @@ git push origin --delete fix_error  # delete global branch
 
 git reset 'file  # remove from the done position
 
-<<<<<<< HEAD
 git branch -a  # see all branch
 
 git remote -v  # see projects
-=======
 
 ########## EOF ###########
