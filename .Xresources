@@ -127,3 +127,5 @@ XTerm.vt100.colorIT:     #808000
 ! white
 *.color7:       #d0d0d0
 *.color15:      #ffffff
+
+##########
