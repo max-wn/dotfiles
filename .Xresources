@@ -79,42 +79,42 @@ URxvt*depth: 32
 
 ! special
 URxvt*foreground:   #bbc5ff
-URxvt*background:   [95]#282a36
+URxvt*background:   #000000
 URxvt*cursorColor:  #bbc5ff
 
-XTerm*foreground: #bbc5ff
-XTerm*background: #101010
-XTerm*cursorColor: #bbc5ff
+XTerm*foreground:   #bbc5ff
+XTerm*background:   #000000
+XTerm*cursorColor:  #ff0000
 
-! отключаем жирный шрифт и вместо него делаем текст синим.
+! отключаем жирный шрифт и вместо него делаем текст Aqua.
 XTerm.vt100.colorBDMode: true
-XTerm.vt100.colorBD: rgb:82/a4/d3
+XTerm.vt100.colorBD:     #00ffff
 ! отключаем подчеркнутый текст и вместо него делаем его белым.
 XTerm.vt100.colorULMode: true
-XTerm.vt100.colorUL: rgb:e4/e4/e4
-! аналогично использовать colorIT для курсива делаем его жёлтым
+XTerm.vt100.colorUL:     #ffffff
+! аналогично использовать colorIT для курсива делаем его Olive
 XTerm.vt100.colorITMode: true
-XTerm.vt100.colorIT: rgb:ff/ff/00
+XTerm.vt100.colorIT:     #808000
 
 ! black
-*.color0:       #101010  !! originally #282a36
+*.color0:       #000000  !! originally #282a36
 *.color8:       #434758
 
 ! red
-*.color1:       #f07178
-*.color9:       #ff8b92
+*.color1:       #800000
+*.color9:       #ff0000
 
 ! green
-*.color2:       #c3e88d
-*.color10:      #ddffa7
+*.color2:       #008000
+*.color10:      #00ff00
 
 ! yellow
-*.color3:       #ffcb6b
-*.color11:      #ffe585
+*.color3:       #ffd700
+*.color11:      #ffff00
 
 ! blue
-*.color4:       #82aaff
-*.color12:      #9cc4ff
+*.color4:       #000080
+*.color12:      #0000ff
 
 ! magenta
 *.color5:       #c792ea
