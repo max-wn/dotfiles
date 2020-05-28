@@ -72,7 +72,7 @@ augroup END
     set shortmess+=c
 
     set colorcolumn=80
-    highlight ColorColumn ctermbg=1 guibg=lightgray
+    highlight ColorColumn ctermbg=8 guibg=lightgray
 
 " AUTORUN
 " Run xrdb whenever Xdefaults or Xresources are updated.
