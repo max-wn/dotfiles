@@ -96,16 +96,6 @@ XTerm.vt100.colorUL:     #ffffff
 XTerm.vt100.colorITMode: true
 XTerm.vt100.colorIT:     #808000
 
-! отключаем жирный шрифт и вместо него делаем текст синим.
-XTerm.vt100.colorBDMode: true
-XTerm.vt100.colorBD: rgb:82/a4/d3
-! отключаем подчеркнутый текст и вместо него делаем его белым.
-XTerm.vt100.colorULMode: true
-XTerm.vt100.colorUL: rgb:e4/e4/e4
-! аналогично использовать colorIT для курсива делаем его жёлтым
-XTerm.vt100.colorITMode: true
-XTerm.vt100.colorIT: rgb:ff/ff/00
-
 ! black
 *.color0:       #000000  !! originally #282a36
 *.color8:       #434758
@@ -137,5 +127,3 @@ XTerm.vt100.colorIT: rgb:ff/ff/00
 ! white
 *.color7:       #d0d0d0
 *.color15:      #ffffff
-
-##########
