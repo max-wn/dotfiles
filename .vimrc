@@ -1,31 +1,43 @@
-" ===========================================================================
+"============================================================================
 " MY VIMRC FILE
-" ===========================================================================
-" Maintainer: WILLENBROCK
-" Last change: пятница, 22 мая 2020 г. 21:04:50 (MSK)
+"============================================================================
+" Maintainer: WILLENBROCK 
+" Last change: 30.05.2020
 " To use it, copy it to
 "    for Unix and OS/2:  ~/.vimrc
 "            for Amiga:  s:.vimrc
 " for MS-DOS and Win32:  $VIM\_vimrc
 "          for OpenVMS:  sys$login:.vimrc
-" to make vim by defolt in linux execute this command in terminal:
-"                        sudo update-alternatives --config editor
-" ===========================================================================
+"          to make vim by defolt in linux execute this command in terminal:
+"                         sudo update-alternatives --config editor
+"============================================================================
 
-" When started as "evim", evim.vim will already have done these settings,
-" bail out.
-if v:progname =~? "evim"
-    finish
-endif
- 
+" PLUGINS
+call plug#begin('~/.vim/plugged')
+
+Plug 'mbbill/undotree'
+Plug 'morhetz/gruvbox'
+
+call plug#end()
+
+" For gruvbox color scheme
+colorscheme gruvbox
+set background=dark
+set termguicolors
+
 " Put these in an autocmd group, so that we can delete them easily.
 augroup vimrcEx
     au!
+" Run xrdb whenever Xdefaults or Xresources are updated.
+    autocmd BufWritePost *Xresources,*Xdefaults !xrdb %
 
-    " For all text files set 'textwidth' to 78 characters.
+" Reload the settings file without restarting Vim.
+    autocmd BufWritePost .vimrc source $MYVIMRC
+
+" For all text files set 'textwidth' to 78 characters.
     autocmd FileType text setlocal textwidth=78
 
-    " limit the width of e-mail text to 78 characters
+" limit the width of e-mail text to 78 characters
     au BufRead /tmp/mutt-* set tw=78
 
 augroup END
@@ -51,15 +63,14 @@ augroup END
     set undofile
     set incsearch
     set hidden
-    set showcmd                " Display an incomplete command
-                               " in the lower right corner
+    set showcmd                " Display an incomplete command in the lower right corner
 
 " Maping keys
-    map <Down> <NOP>          " disable Down arrow key in normal mode
+    map <Down> <NOP>           " disable Down arrow key in normal mode
     map <Up> <NOP>
     map <Left> <NOP>
     map <Right> <NOP>
-    inore jj <Esc>            " type jj instead of Esc to return in normal mode
+    inore jj <Esc>             " type jj instead of Esc to return in normal mode
 
 " Give more space for displaying messages.
     set cmdheight=2
@@ -72,13 +83,6 @@ augroup END
     set shortmess+=c
 
     set colorcolumn=80
-    highlight ColorColumn ctermbg=1 guibg=lightgray
+    highlight ColorColumn ctermbg=0 guibg=lightgrey
 
-" AUTORUN
-" Run xrdb whenever Xdefaults or Xresources are updated.
-    autocmd BufWritePost *Xresources,*Xdefaults !xrdb %
-
-" Reload the settings file without restarting Vim.
-    autocmd BufWritePost .vimrc source $MYVIMRC
-
-"######################EOF######################################################
+" #################### EOF ####################
