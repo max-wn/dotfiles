@@ -1,0 +1,114 @@
+#============================================================================
+# MY MUTTRC FILE FOR YANDEX MAIL
+#============================================================================
+# Creator      : nils
+# Copy file to : ~/.muttrc
+# Date         : Вт июн 23 09:50:14 MSK 2020
+# В каталоге   : /usr/share/doc/mutt-/samples
+# вы можете найти некоторые примеры файлов muttrc из официальной поставки.
+#============================================================================
+
+## From
+set from = your_mail@yandex.ru
+set realname = your_real_name
+set use_from = yes
+set envelope_from = yes
+set ssl_starttls = yes
+set ssl_force_tls = yes
+
+## Creds
+set imap_user = ypur_mail@yandex.ru
+set imap_pass = your_password
+set smtp_url = smtps://your_mail@smtp.yandex.ru:465
+set smtp_pass = your_password
+
+## My mailboxes
+# mailboxes =INBOX =Отправленные =Черновики =Удаленные
+set spoolfile = imaps://your_mail@imap.yandex.ru # где расположена входящая почта (почтовый ящик МТА)
+set folder = imaps://imap.yandex.ru:993 # папка, где хранится вся обработанная почта
+set record = =Отправленные              # где хранить отправленную почту
+set postponed = =Черновики              # где хранить отложенные сообщения
+set trash = =Удаленные                  # где хранить trash сообщения
+
+## Where to put the stuff
+set header_cache = ~/.mutt/cache/headers
+set message_cachedir = ~/.mutt/cache/bodies
+set certificate_file = ~/.mutt/certificates
+source ~/.mutt/contacts            # address book
+set signature = ~/.mutt/signature  # signature
+
+## MISC
+set sort = threads              # thread view
+set copy = yes                  # copy or do not copy sent mail
+set move = yes                  # copy or do not copy sent mail
+set sleep_time = 0              # disable artifitial pauses
+set nocollapse_unread           # никогда не сворачивать дискуссии с непрочитанными сообщениями
+set pager_index_lines=6         # количество строк показываемых в пейджере
+set mail_check = 60             # mail check time
+set read_inc=25                 # показать статусбар при загрузки сообщений
+set write_inc=25                # показать статусбар при подготовке сообщений
+set date_format="%d.%m.%y %I:%M%p"
+set index_format="%2C %Z %?X?A& ? %D %-15.15F %s (%-4.4c)"
+set menu_scroll                 # scroll index line by line
+
+## EDITOR
+set editor = vim # используемый редактор при составлении письма
+set visual = vim # редактор, вызываемый по ~v
+
+## IMAP
+unset imap_passive
+set imap_check_subscribed
+set imap_keepalive = 900
+
+## сортировку — что бы новые письма были сверху, и что бы отображались ответы
+set sort_browser=reverse-date
+set sort_aux=reverse-last-date-received
+
+## MAPPINGS
+# scroll message line by line using arraws
+# bind pager <up> previous-line
+# bind pager <down> next-line
+
+## vim like keys
+bind index G last-entry
+bind index gg first-entry
+bind index "S" imap-fetch-mail  # fetch new email
+
+## COLOR SCHEME
+color normal     default   default
+color hdrdefault red       default
+color attachment yellow    default  # выделять все прикрепленные к письму файлы
+# URLs
+color body magenta default "([a-z][a-z0-9+-]*://(((([a-z0-9_.!~*'();:&=+$,-]|%[0-9a-f][0-9a-f])*@)?((([a-z0-9]([a-z0-9-]*[a-z0-9])?)\\.)*([a-z]([a-z0-9-]*[a-z0-9])?)\\.?|[0-9]+\\.[0-9]+\\.[0-9]+\\.[0-9]+)(:[0-9]+)?)|([a-z0-9_.!~*'()$,;:@&=+-]|%[0-9a-f][0-9a-f])+)(/([a-z0-9_.!~*'():@&=+$,-]|%[0-9a-f][0-9a-f])*(;([a-z0-9_.!~*'():@&=+$,-]|%[0-9a-f][0-9a-f])*)*(/([a-z0-9_.!~*'():@&=+$,-]|%[0-9a-f][0-9a-f])*(;([a-z0-9_.!~*'():@&=+$,-]|%[0-9a-f][0-9a-f])*)*)*)?(\\?([a-z0-9_.!~*'();/?:@&=+$,-]|%[0-9a-f][0-9a-f])*)?(#([a-z0-9_.!~*'();/?:@&=+$,-]|%[0-9a-f][0-9a-f])*)?|(www|ftp)\\.(([a-z0-9]([a-z0-9-]*[a-z0-9])?)\\.)*([a-z]([a-z0-9-]*[a-z0-9])?)\\.?(:[0-9]+)?(/([-a-z0-9_.!~*'():@&=+$,]|%[0-9a-f][0-9a-f])*(;([-a-z0-9_.!~*'():@&=+$,]|%[0-9a-f][0-9a-f])*)*(/([-a-z0-9_.!~*'():@&=+$,]|%[0-9a-f][0-9a-f])*(;([-a-z0-9_.!~*'():@&=+$,]|%[0-9a-f][0-9a-f])*)*)*)?(\\?([-a-z0-9_.!~*'();/?:@&=+$,]|%[0-9a-f][0-9a-f])*)?(#([-a-z0-9_.!~*'();/?:@&=+$,]|%[0-9a-f][0-9a-f])*)?)[^].,:;!)? \t\r\n<>\"]"
+# email addresses
+color body magenta default "((@(([0-9a-z-]+\\.)*[0-9a-z-]+\\.?|#[0-9]+|\\[[0-9]?[0-9]?[0-9]\\.[0-9]?[0-9]?[0-9]\\.[0-9]?[0-9]?[0-9]\\.[0-9]?[0-9]?[0-9]\\]),)*@(([0-9a-z-]+\\.)*[0-9a-z-]+\\.?|#[0-9]+|\\[[0-9]?[0-9]?[0-9]\\.[0-9]?[0-9]?[0-9]\\.[0-9]?[0-9]?[0-9]\\.[0-9]?[0-9]?[0-9]\\]):)?[0-9a-z_.+%$-]+@(([0-9a-z-]+\\.)*[0-9a-z-]+\\.?|#[0-9]+|\\[[0-2]?[0-9]?[0-9]\\.[0-2]?[0-9]?[0-9]\\.[0-2]?[0-9]?[0-9]\\.[0-2]?[0-9]?[0-9]\\])"
+# Border lines.
+color body blue default "( *[-+=#*~_]){6,}"
+# выделять заголовки
+#color header blue         default "From: "
+#color header brightyellow default "Subject: "
+#color header brightyellow default "Date: "
+
+color quoted  default  default  # выделять все цитаты цветом
+# color quoted1 cyan  default
+# color quoted2 green default
+# color quoted3 cyan  default
+# color quoted4 green default
+# color quoted5 cyan  default
+color error     red      default  # error messages
+color message   white    default  # message  informational messages
+color indicator default      red  # indicator for the "current message"
+color status    blue     default  # status lines in the folder index sed for the mini-help line
+color tree      blue     default  # the "tree" display of threads within the folder index
+color search    white    blue     # search matches found with search within the internal pager
+color markers   red      default  # The markers indicate a wrapped line hen showing messages with looong lines
+color index     default    default '.*'
+color index     green   default '~O'
+color index     green   default '~N'
+color index     red      default '~F'  # Flagged Messages are important!
+color index     yellow   default '~D'  # Deleted Mails - use dark color as these are already "dealt with"
+color signature red      default       # выделять подпись в письме цветом
+color prompt    brightmagenta default
+color tilde     brightmagenta default
+
+###############################################################################

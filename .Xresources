@@ -19,18 +19,21 @@ Xft.lcdfilter: lcdfilter
 
 XTerm*renderFont: true
 XTerm*faceName: xft:Noto Sans Mono SemiCondensed, \
-                xft:JoyPixels:size=12, \
-                xft:Monospace:style=Medium:size=12   
+            xft:JoyPixels:size=12, \
+            xft:Monospace:style=Medium:size=12   
 XTerm*faceSize: 11
 XTerm*utf8: 2
 XTerm*locale: true
+! two lines below for use Alt witout errors in symbols
+XTerm*metaSendsEscape: true
+XTerm*eightBitInput: false
 
 ! key bindings
 XTerm.vt100.translations: #override \n\
-  Ctrl <Key> j: smaller-vt-font() \n\
-  Ctrl <Key> k: larger-vt-font() \n\
-  Mod4 <Key> c: copy-selection(CLIPBOARD) \n\
-  Mod4 <Key> v: insert-selection(CLIPBOARD)
+Ctrl <Key> j: smaller-vt-font() \n\
+Ctrl <Key> k: larger-vt-font() \n\
+Mod4 <Key> c: copy-selection(CLIPBOARD) \n\
+Mod4 <Key> v: insert-selection(CLIPBOARD)
 
 ! Every shell is a login shell by default
 ! (for inclusion of all necessary environment variables)
@@ -47,8 +50,8 @@ URxvt*termName: rxvt-unicode-256color
 URxvt*buffered: false
 URxvt.intensityStyles: false
 URxvt.font: xft:Mononoki Nerd Font:size=12, \
-            xft:JoyPixels:size=12, \
-            xft:Monospace:style=Medium:size=12   
+        xft:JoyPixels:size=12, \
+        xft:Monospace:style=Medium:size=12   
 URxvt.saveLines: 2000
 URxvt.scrollBar: false
 URxvt.cursorColor: white
@@ -73,19 +76,25 @@ URxvt.keysym.M-c: perl:clipboard:copy
 URxvt.keysym.M-v: perl:clipboard:paste
 URxvt*depth: 32
 
+! COLOR TABLE FOR INFO
+/* name   dark light */
+/* black  0    8     */
+/* red    1    9     */
+/* green  2    10    */
+/* yellow 3    11    */
+/* blue   4    12    */
+/* purple 5    13    */
+/* cyan   6    14    */
+/* white  7    15    */
 
-! Dracula Xresources palette MODIFIED
 !! COLORS
-
-! special
-URxvt*foreground:   #bbc5ff
-URxvt*background:   #000000
-URxvt*cursorColor:  #bbc5ff
-
-XTerm*foreground:   #bbc5ff
-XTerm*background:   #000000
+! Special
+URxvt*foreground:   #ebdbb2
+URxvt*background:   #1d2021
+URxvt*cursorColor:  #ff0000
+XTerm*foreground:   #ebdbb2
+XTerm*background:   #1d2021
 XTerm*cursorColor:  #ff0000
-
 ! отключаем жирный шрифт и вместо него делаем текст Aqua.
 XTerm.vt100.colorBDMode: true
 XTerm.vt100.colorBD:     #00ffff
@@ -96,34 +105,118 @@ XTerm.vt100.colorUL:     #ffffff
 XTerm.vt100.colorITMode: true
 XTerm.vt100.colorIT:     #808000
 
-! black
-*.color0:       #000000  !! originally #282a36
-*.color8:       #434758
+! -----------------------------------------------------------------------------
+/* ! INITIAL SCHEME */ 
+! -----------------------------------------------------------------------------
+/* ! black */
+/* *.color0:       #000000 */
+/* *.color8:       #434758 */
+/* ! red */
+/* *.color1:       #800000 */
+/* *.color9:       #ff0000 */
+/* ! green */
+/* *.color2:       #008000 */
+/* *.color10:      #00ff00 */
+/* ! yellow */
+/* *.color3:       #ffd700 */
+/* *.color11:      #ffff00 */
+/* ! blue */
+/* *.color4:       #000080 */
+/* *.color12:      #0000ff */
+/* ! magenta */
+/* *.color5:       #c792ea */
+/* *.color13:      #e1acff */
+/* ! cyan */
+/* *.color6:       #89ddff */
+/* *.color14:      #a3f7ff */
+/* ! white */
+/* *.color7:       #d0d0d0 */
+/* *.color15:      #ffffff */
 
-! red
-*.color1:       #800000
-*.color9:       #ff0000
+! -----------------------------------------------------------------------------
+! File: gruvbox-dark.xresources
+! Description: Retro groove colorscheme generalized
+! Author: morhetz <morhetz@gmail.com>
+! Source: https://github.com/morhetz/gruvbox-generalized
+! Last Modified: 6 Sep 2014
+! -----------------------------------------------------------------------------
+! hard contrast:
+*background: #1d2021
+! normal contrast: *background: #282828
+! soft contrast: *background: #32302f
+*foreground: #ebdbb2
+! Black + DarkGrey
+*color0:  #282828
+*color8:  #928374
+! DarkRed + Red
+*color1:  #cc241d
+*color9:  #fb4934
+! DarkGreen + Green
+*color2:  #98971a
+*color10: #b8bb26
+! DarkYellow + Yellow
+*color3:  #d79921
+*color11: #fabd2f
+! DarkBlue + Blue
+*color4:  #458588
+*color12: #83a598
+! DarkMagenta + Magenta
+*color5:  #b16286
+*color13: #d3869b
+! DarkCyan + Cyan
+*color6:  #689d6a
+*color14: #8ec07c
+! LightGrey + White
+*color7:  #a89984
+*color15: #ebdbb2
 
-! green
-*.color2:       #008000
-*.color10:      #00ff00
+! -----------------------------------------------------------------------------
+! Copyright (c) 2016-present Arctic Ice Studio <development@arcticicestudio.com>
+! Copyright (c) 2016-present Sven Greb <code@svengreb.de>
 
-! yellow
-*.color3:       #ffd700
-*.color11:      #ffff00
+! Project:    Nord XResources
+! Version:    0.1.0
+! Repository: https://github.com/arcticicestudio/nord-xresources
+! License:    MIT
+! -----------------------------------------------------------------------------
+/* #define nord0 #2E3440 */
+/* #define nord1 #3B4252 */
+/* #define nord2 #434C5E */
+/* #define nord3 #4C566A */
+/* #define nord4 #D8DEE9 */
+/* #define nord5 #E5E9F0 */
+/* #define nord6 #ECEFF4 */
+/* #define nord7 #8FBCBB */
+/* #define nord8 #88C0D0 */
+/* #define nord9 #81A1C1 */
+/* #define nord10 #5E81AC */
+/* #define nord11 #BF616A */
+/* #define nord12 #D08770 */
+/* #define nord13 #EBCB8B */
+/* #define nord14 #A3BE8C */
+/* #define nord15 #B48EAD */
 
-! blue
-*.color4:       #000080
-*.color12:      #0000ff
+/* *.foreground:   nord4 */
+/* *.background:   nord0 */
+/* *.cursorColor:  nord4 */
+/* *fading: 35 */
+/* *fadeColor: nord3 */
 
-! magenta
-*.color5:       #c792ea
-*.color13:      #e1acff
+/* *.color0: nord1 */
+/* *.color1: nord11 */
+/* *.color2: nord14 */
+/* *.color3: nord13 */
+/* *.color4: nord9 */
+/* *.color5: nord15 */
+/* *.color6: nord8 */
+/* *.color7: nord5 */
+/* *.color8: nord3 */
+/* *.color9: nord11 */
+/* *.color10: nord14 */
+/* *.color11: nord13 */
+/* *.color12: nord9 */
+/* *.color13: nord15 */
+/* *.color14: nord7 */
+/* *.color15: nord6 */
 
-! cyan
-*.color6:       #89ddff
-*.color14:      #a3f7ff
-
-! white
-*.color7:       #d0d0d0
-*.color15:      #ffffff
+##########EOF##################################################################

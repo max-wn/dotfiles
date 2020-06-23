@@ -1,15 +1,13 @@
 "============================================================================
 " MY VIMRC FILE
 "============================================================================
-" Maintainer: WILLENBROCK 
-" Last change: 30.05.2020
+" Creator             : WILLENBROCK 
+" Last change         : 30.05.2020
 " To use it, copy it to
-"    for Unix and OS/2:  ~/.vimrc
-"            for Amiga:  s:.vimrc
-" for MS-DOS and Win32:  $VIM\_vimrc
-"          for OpenVMS:  sys$login:.vimrc
-"          to make vim by defolt in linux execute this command in terminal:
-"                         sudo update-alternatives --config editor
+"    for Unix and OS/2: ~/.vimrc
+" for MS-DOS and Win32: $VIM\_vimrc
+"to make vim by defolt in linux execute this command in terminal:
+"                       sudo update-alternatives --config editor
 "============================================================================
 
 " PLUGINS
@@ -17,22 +15,25 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'mbbill/undotree'
 Plug 'morhetz/gruvbox'
+Plug 'tpope/vim-commentary'
 
 call plug#end()
 
 " For gruvbox color scheme
+let g:gruvbox_contrast_dark = 'hard'
 colorscheme gruvbox
 set background=dark
 set termguicolors
 
 " Put these in an autocmd group, so that we can delete them easily.
 augroup vimrcEx
-    au!
+au!
 " Run xrdb whenever Xdefaults or Xresources are updated.
-    autocmd BufWritePost *Xresources,*Xdefaults !xrdb %
+autocmd BufWritePost *Xresources,*Xdefaults !xrdb %
 
 " Reload the settings file without restarting Vim.
-    autocmd BufWritePost .vimrc source $MYVIMRC
+autocmd BufWritePost .vimrc source $MYVIMRC
+" autocmd BufWritePost muttrc source /home/nils/.mutt/muttrc ???
 
 " For all text files set 'textwidth' to 78 characters.
     autocmd FileType text setlocal textwidth=78
@@ -83,6 +84,6 @@ augroup END
     set shortmess+=c
 
     set colorcolumn=80
-    highlight ColorColumn ctermbg=0 guibg=lightgrey
+    " highlight ColorColumn ctermbg=0 guibg=lightgrey
 
 " #################### EOF ####################
