@@ -1,0 +1,54 @@
+===============================================================================
+ARCH INSTALLATION TUTOR
+===============================================================================
+1. Check our disks
+    lsblk
+2. Check UEFI or BIOS (this tutor for BIOS only)
+    ls /sys/firmware/efi/efivars
+
+3. Check internet connection
+    check ip (if no ip use wifi instructions):
+    ip addr show
+
+
+
+#####
+14. Install arch
+    pacstrap /mnt base base-devel linux linux-firmware linux-headers vim inetutils netctl dhcpcd dialog iw iwd wpa_supplicant intel-ucode man-pages man-db
+
+#####
+XX. Update & upgrade system
+    sudo pacman -Syu
+
+XX. Install xorg
+    sudo pacman -S xorg xorg-xinit xsorg-server xorg-drivers xorg-xmodmap xterm
+        show mod keys (work only if WM starts):
+        xmodmap -pm
+
+XX. Install additional important packages
+    sudo pacman -S git openssh
+
+XX. Install nvidia packages
+    sudo pacman -S nvidia nvidia-utils
+
+XX. Install WM (qtile and additional packages for it)
+    sudo pacman -S qtile alacritty dmenu python-psutil
+
+XX. Install fonts
+    sudo pacman -S ttf-inconsolata
+        plus: ttf-linux-libertine
+        or: noto-fonts
+
+XX. Install audio packages
+    sudo pacman -S pulseaudio pulseaudio-alsa
+
+XX. Install workflow packages
+    sudo pacman -S figlet mutt firefox udisks2
+
+XX. Set defolt editor
+    vim ~/bash_profile
+    put here: export EDITOR="vim"
+
+===============================================================================
+EOF
+===============================================================================
