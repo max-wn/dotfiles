@@ -66,12 +66,14 @@ augroup END
     set hidden
     set showcmd                " Display an incomplete command in the lower right corner
 
-" Maping keys
-    map <Down> <NOP>           " disable Down arrow key in normal mode
-    map <Up> <NOP>
-    map <Left> <NOP>
+" Maping keys disable arrow keys in normal mode
+    map <Down>  <NOP>         
+    map <Up>    <NOP>
+    map <Left>  <NOP>
     map <Right> <NOP>
-    inore jj <Esc>             " type jj instead of Esc to return in normal mode
+
+" type jj instead of Esc to return in normal mode
+    inore jj    <Esc>          
 
 " Give more space for displaying messages.
     set cmdheight=2
@@ -84,6 +86,6 @@ augroup END
     set shortmess+=c
 
     set colorcolumn=80
-    " highlight ColorColumn ctermbg=0 guibg=lightgrey
+    highlight ColorColumn ctermbg=0 guibg=lightgrey
 
 " #################### EOF ####################
