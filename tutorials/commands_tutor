@@ -2,19 +2,19 @@
 LINUX COMMANDS
 ===============================================================================
 
-# создать резервную копию существующего файла sources.list:
+# создать резервную копию существующего файла sources.list: in debian
 sudo cp /etc/apt/sources.list /etc/apt/sources.list_backup
 
-# открыть файл sources.list
+# открыть файл sources.list in debian
 sudo vim /etc/apt/sources.list
 
-# добавить строку в sources.list с репозиторием backports
+# добавить строку в sources.list с репозиторием backports in debian
 deb http://deb.debian.org/debian buster-backports main contrib non-free
 
-# чтобы обновить headers
+# чтобы обновить headers in debian
 sudo apt install linux-headers-$(uname -r)
 
-# чтобы проверить ядра
+# чтобы проверить ядра in debian
 apt search linux-headers
 
 #rsynk docs backup
@@ -24,7 +24,7 @@ sudo rsync -aAXv --delete /home/ /media/nils/WD_Passport/LINUX_BACKUP/
 # install deb files
 sudo dpkg -i ~/Загрузки/slack-desktop-4.3.2-amd64.deb
 
-# fixes
+# fixes in debian
 sudo apt --fix-broken install
 
 #comp parameters
