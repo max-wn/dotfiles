@@ -30,7 +30,10 @@ from libqtile import layout, bar, widget
 
 from typing import List  # noqa: F401
 
-mod = "mod4"
+mod = "mod4"                                     # Sets mod key to SUPER
+# myTerm = "xterm"                                 # My terminal of choice
+myTerm = "alacritty"                             # My terminal of choice
+myConfig = "/home/nils/.config/qtile/config.py"  # Qtile config file location
 
 keys = [
     # Switch between windows in current stack pane
@@ -52,7 +55,9 @@ keys = [
     # Unsplit = 1 window displayed, like Max layout, but still with
     # multiple stack panes
     Key([mod, "shift"], "Return", lazy.layout.toggle_split()),
-    Key([mod], "Return", lazy.spawn("xterm")),
+    
+    Key([mod], "Return", lazy.spawn(myTerm)),
+    # Key([mod], "d", lazy.spawn("dmenu_run -p 'Run: '"),
 
     # Toggle between different layouts as defined below
     Key([mod], "Tab", lazy.next_layout()),
@@ -109,7 +114,18 @@ screens = [
                 widget.Prompt(),
                 widget.WindowName(),
                 # widget.TextBox("default config", name="default"),
+                widget.TextBox(text = "KBLO:"),
+                widget.KeyboardLayout(),
+                widget.TextBox( text = "BTTR:"),
+                widget.Battery(format = '{char} {percent:2.0%}'),
+                widget.BatteryIcon(),
+                widget.TextBox(text = "PCMN:"),
+                widget.Pacman(update_interval = 1800),
+                widget.TextBox( text = "updates"),
+                widget.TextBox(text = "VOL:"),
+                widget.Volume(),
                 widget.Systray(),
+                widget.TextBox( text = "DATE:"),
                 widget.Clock(format='%Y.%m.%d %a %H:%M'),
                 # widget.QuickExit(),
             ],
@@ -161,4 +177,4 @@ focus_on_window_activation = "smart"
 #
 # We choose LG3D to maximize irony: it is a 3D non-reparenting WM written in
 # java that happens to be on java's whitelist.
-wmname = "qtile"
+wmname = "LG3D"

@@ -204,7 +204,8 @@ awaliable in wiki:
         visudo
 
 32. Install xorg and video drivers
-    sudo pacman -S xorg xorg-xinit xsorg-server xorg-drivers xorg-xmodmap xterm
+    sudo pacman -S xorg xorg-xinit xsorg-server xorg-drivers xorg-xmodmap
+    xterm xcb-util-cursor
         32.X. show mod keys (work only if WM starts):
             xmodmap -pm
         32.1. Check your video card (here I have nvidia and I will use
@@ -249,7 +250,8 @@ awaliable in wiki:
 
 37. Install workflow packages
     sudo pacman -S figlet mutt firefox udisks2 pycharm-community-edition moc
-    htop
+    htop mc calcurse sxiv zathura zathura-pdf-mupdf zathura-djvu
+    pacman-contrib
 
 38. Set defolt programms, put in file:
     vim ~/.bash_profile
