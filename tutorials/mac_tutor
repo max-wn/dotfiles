@@ -1,0 +1,14 @@
+===============================================================================
+MAC TRICKS AND COMMANDS
+===============================================================================
+
+# команды для записи iso на флэшку
+$ diskutil list  # выдает список дисков и там ищем имя флэшки (сейчас это disk2)
+$ sudo diskutil umountDisk /dev/disk2 # "изымаем" типа флэшку при этом оставляя ее в разъеме
+$ sudo dd if=/Users/Maksim/Downloads/debian-live-10.2.0-amd64-xfce.iso of=/dev/rdisk2 bs=1m
+
+# команда для записи ОС на флэшку
+# предварительно надо отформатировать флешку на Mac OS Extended и назвать MyVolume --> это важно
+$ sudo /Applications/Install\ macOS\ Mojave.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume --applicationpath /Applications/Install\ macOS\ Mojave.app
+
+

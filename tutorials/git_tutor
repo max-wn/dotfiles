@@ -1,14 +1,15 @@
 # =========================================================================|
-# Git commands                                                             |
+# GIT COMMANDS                                                             |
 # =========================================================================|
 
-# git commands below:
-
+# git configuration
 git config --global user.name 'name  # add name
-
 git config --global user.email 'email  # add email
-
 git config -l  # check config
+# Linux config file:
+    /home/myuser/.gitconfig
+# Windows config file:
+    C:\Users\myuser\.gitconfig
 
 git init .  # generation data base git in dir
 
@@ -18,15 +19,19 @@ git add .  # uplode all files in git
 
 git commit -m "my initial commit"  # copy in local repository and wrate a comment
 
-git log  # check log
+# logs
+git log            # check log
+git log -1         # check last commit
+git log -p         # detailed check
+git log -1 -p      # all info about commit
+git diff --staged  #  show difference in detail
 
-git log -1  # check last commit
-
-git log -1 -p  # all info about commit
-
-dit checkout -- 'test.py  # del all chenges
-
-git diff --staged  # auto command git add * show in detail
+# file operations
+git rm --cached [file_name] # удалить файл из репозитория гит
+rm -fr .git                 # полностью удалить директорию гит
+.gitignore                  # игнорировать ---> туда вписать файл,
+                            # директорию, расширение и т д
+git checkout -- file.txt    # откатывает назад изменения в файле
 
 git clone 'link in project  # downloud in copmuter
 
