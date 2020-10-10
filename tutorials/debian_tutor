@@ -1,5 +1,5 @@
 ===============================================================================
-LINUX COMMANDS
+LINUX COMMANDS IN DEBIAN
 ===============================================================================
 
 # создать резервную копию существующего файла sources.list: in debian
@@ -41,8 +41,11 @@ vm.swappiness = 10
 
 ## just for STEAM 
 You might need to specify the right command for games inside Steam.
-1.Select a game - that you want to run using your discrete Nvidia card - from the Library page of the Steam client, right-mouse-button-click, and select Properties.
-2.Click the "set launch options" button and specify 'optirun %command%' for the command line.
+1.Select a game - that you want to run using your discrete Nvidia card - 
+    from the Library page of the Steam client, right-mouse-button-click, 
+    and select Properties.
+2.Click the "set launch options" button and specify 'optirun %command%' 
+    for the command line.
 3. Save your changes.
 If this doesn't work, try "primusrun" instead of "optirun".
 
@@ -50,7 +53,8 @@ If this doesn't work, try "primusrun" instead of "optirun".
 sudo apt install python3-pip  # install pip3
 
 # JETBRAINS
-sudo tar -xzf jetbrains-toolbox-1.16.6319.tar.gz -C /opt  # unpack file "jetbrains-toolbox-1.16.6319.tar.gz"
+sudo tar -xzf jetbrains-toolbox-1.16.6319.tar.gz -C /opt  # unpack file 
+    # "jetbrains-toolbox-1.16.6319.tar.gz"
 ./jetbrains-toolbox  # run the file "jetbrains-toolbox"
 
 # checkio
