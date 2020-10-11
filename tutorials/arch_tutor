@@ -251,7 +251,14 @@ awaliable in wiki:
 37. Install workflow packages
     sudo pacman -S figlet mutt firefox udisks2 pycharm-community-edition moc
     htop mc calcurse sxiv zathura zathura-pdf-mupdf zathura-djvu
-    pacman-contrib
+    pacman-contrib github-cli
+
+        packages description:
+        figlet --> display large letters out of text
+        ...
+        ...
+        ...
+        github-cli --> cli client gor github
 
 38. Set defolt programms, put in file:
     vim ~/.bash_profile
