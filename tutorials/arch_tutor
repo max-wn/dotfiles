@@ -189,88 +189,115 @@ awaliable in wiki:
             reboot
 
 30. Update & upgrade system
-    sudo pacman -Syu
+P>         
+sudo pacman -Syu
 
 31. Users and groups.
-    31.1. Add new user (-m means home dir will be created)
-        useradd -m <nameofuser>
-    31.2. Add password for new user
-        passwd <nameofuser> <password>
-    31.3. Add user to groups
-        usermod -aG wheel,audio,video,optical,storage,<nameofuser>
-    31.4 Check user's groups
-        groups <nameofuser>
-    31.5 Open sudoers file (/etc/sudoers) and uncomment wheel group
-        visudo
+31.1. Add new user (-m means home dir will be created)
+    useradd -m <nameofuser>
+31.2. Add password for new user
+    passwd <nameofuser> <password>
+31.3. Add user to groups
+    usermod -aG wheel,audio,video,optical,storage,<nameofuser>
+31.4 Check user's groups
+    groups <nameofuser>
+31.5 Open sudoers file (/etc/sudoers) and uncomment wheel group
+    visudo
 
 32. Install xorg and video drivers
-    sudo pacman -S xorg xorg-xinit xsorg-server xorg-drivers xorg-xmodmap
-    xterm xcb-util-cursor
-        32.X. show mod keys (work only if WM starts):
-            xmodmap -pm
-        32.1. Check your video card (here I have nvidia and I will use
-        proprietary driver)
-            lspci -k | grep -E "(VGA|3D)"
-        32.3. Uninstal conflict drivers. IMPORTANT!
-            sudo pacman -Rs xf86-video-amdgpu
-            sudo pacman -Rs xf86-video-nouveau
-            sudo pacman -Rs xf86-video-intel
-        32.4. Ceck if you have mesa (if not, install it)
-            sudo pacman -Qs mesa
-        32.5. Install nvidia packages
-            sudo pacman -S nvidia nvidia-utils
-        32.6. Check xorg
-            sudo startx
-        32.7. Exit from xorg
-            exit
+sudo pacman -S xorg xorg-xinit xsorg-server xorg-drivers xorg-xmodmap
+xterm xcb-util-cursor
+    32.X. show mod keys (work only if WM starts):
+        xmodmap -pm
+    32.1. Check your video card (here I have nvidia and I will use
+    proprietary driver)
+        lspci -k | grep -E "(VGA|3D)"
+    32.3. Uninstal conflict drivers. IMPORTANT!
+        sudo pacman -Rs xf86-video-amdgpu
+        sudo pacman -Rs xf86-video-nouveau
+        sudo pacman -Rs xf86-video-intel
+    32.4. Ceck if you have mesa (if not, install it)
+        sudo pacman -Qs mesa
+    32.5. Install nvidia packages
+        sudo pacman -S nvidia nvidia-utils
+    32.6. Check xorg
+        sudo startx
+    32.7. Exit from xorg
+        exit
 
 33. Install WM (qtile and additional packages for it)
-    sudo pacman -S qtile alacritty dmenu python-psutil python-iwlib
-    python-keyring python-dateutil python-pyxdg python-mpd2
-        33.1. Copy .xinitrc to home directory (see instructions in wiki:
-            https://wiki.archlinux.org/index.php/Xinit)
-        33.2. Put the following line in .xinitrc
-            exec qtile
-        33.3. Start qtile from tty by command:
-            xinit
+sudo pacman -S qtile alacritty dmenu python-psutil python-iwlib
+python-keyring python-dateutil python-pyxdg python-mpd2
+    33.1. Copy .xinitrc to home directory (see instructions in wiki:
+        https://wiki.archlinux.org/index.php/Xinit)
+    33.2. Put the following line in .xinitrc
+        exec qtile
+    33.3. Start qtile from tty by command:
+        xinit
 
 34. Install additional important packages
-    sudo pacman -S git openssh
+sudo pacman -S git openssh
 
 35. Install fonts
-    sudo pacman -S ttf-inconsolata
-        plus: ttf-linux-libertine
-        or: noto-fonts
+sudo pacman -S ttf-inconsolata
+    plus: ttf-linux-libertine
+    or: noto-fonts
 
 36. Install audio packages
-    sudo pacman -S pulseaudio pulseaudio-alsa alsa-lib alsa-utils
-    XX.X Set up sound (instructions see
-        at: https://wiki.archlinux.org/index.php/Advanced_Linux_Sound_Architecture)
-            alsamixer
+sudo pacman -S pulseaudio pulseaudio-alsa alsa-lib alsa-utils
+XX.X Set up sound (instructions see
+    at: https://wiki.archlinux.org/index.php/Advanced_Linux_Sound_Architecture)
+        alsamixer
 
 37. Install workflow packages
-    sudo pacman -S figlet mutt firefox udisks2 pycharm-community-edition moc
-    htop mc calcurse sxiv zathura zathura-pdf-mupdf zathura-djvu
-    pacman-contrib github-cli
+sudo pacman -S figlet mutt firefox udisks2 pycharm-community-edition moc
+htop mc calcurse sxiv zathura zathura-pdf-mupdf zathura-djvu
+pacman-contrib github-cli
 
-        packages description:
-        figlet --> display large letters out of text
-        ...
-        ...
-        ...
-        github-cli --> cli client gor github
+    packages description:
+    figlet                    --> display large letters out of text
+    mutt                      --> email client
+    firefox                   --> internet browser
+    udisks2                   --> to query and manipulate storage devices
+    pycharm-community-edition --> python ide
+    moc                       --> audio player
+    htop                      --> interactive process viewer
+    mc                        --> file manager
+    calcurse                  --> todo manager
+    sxiv                      --> lightweight and scriptable image viewer
+    sxiv zathura              --> document viewer PDF, PS, DjVu
+    zathura-pdf-mupdf         --> document viewer PDF, PS, DjVu
+    zathura-djvu              --> document viewer PDF, PS, DjVu
+    pacman-contrib            --> contributed scripts and tools for pacman systems
+    github-cli                --> cli client gor github
 
 38. Set defolt programms, put in file:
-    vim ~/.bash_profile
-        export EDITOR="vim"
-        export BROWSER="firefox"
+vim ~/.bash_profile
+    export EDITOR="vim"
+    export BROWSER="firefox"
 
 39. Create RU keyboard layout:
     39.1. For using Shift + Ctrl for US-RU change:
         localectl --no-convert set-x11-keymap us,ru "" "" grp:ctrl_shift_toggle
     39.2. Restart xinit
-    39
+    39.3 ...
 
+40. STEAM installation.
+All instructions see in: https://wiki.archlinux.org/index.php/Steam
+    40.1 to enable multilib repository, uncomment the [multilib] section in
+        /etc/pacman.conf as follows:
+            [multilib]
+            Include = /etc/pacman.d/mirrorlist
+    40.2 install proprietary 32-bit version OpenGL graphics driver
+        sudo pacman -S lib32-nvidia-utils
+    40.3 Generated en_US.UTF-8 locale, preventing invalid pointer error
+    40.4 The GUI heavily uses the Arial font. See Microsoft fonts. An alternative
+        is to use ttf-liberation
+            sudo pacman -S ttf-liberation
+    40.5 install wqy-zenhei to add support for Asian languages
+        sudo pacman -S wqy-zenhei
+    40.6 install steam
+        sudo pacman -S steam
 
 Turn off PC:
     sudo shutdown -h now
