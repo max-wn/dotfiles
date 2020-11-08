@@ -1,17 +1,17 @@
-# green theme by Jacek Lehmann
-# best viewed on shaded or black terminal
+# green theme by max-wn
+# i have tried to fit it with gruvbox color scheme
 
 background		        = default	default
 frame			        = black		default
 window_title	        = green		default
-directory		        = red 		default
-selected_directory	    = yellow	default
+directory		        = default 		default
+selected_directory	    = black	        green
 playlist		        = blue		default
 selected_playlist	    = magenta	default
 file			        = green		default
-selected_file		    = red		default
-marked_file		        = black 	green	
-marked_selected_file	= red		default
+selected_file		    = black         green
+marked_file		        = red           default
+marked_selected_file	= red		    green
 info			        = cyan		default
 status			        = magenta	default
 title			        = green		default
@@ -35,6 +35,6 @@ message			        = yellow	default
 plist_time		        = magenta	default
 
 info                    = blue      default
-selected_info           = red       default
-marked_info             = cyan      default
-marked_selected_info    = red       default
+selected_info           = black         green
+marked_info             = red           default
+marked_selected_info    = red           green
