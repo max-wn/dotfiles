@@ -24,9 +24,11 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
+import os      # for correct work of prompt variable
+import socket  # for correct work of prompt variable
 from libqtile.config import Key, Screen, Group, Drag, Click
 from libqtile.lazy import lazy
-from libqtile import layout, bar, widget
+from libqtile import layout, bar, widget, hook
 
 from typing import List  # noqa: F401
 
@@ -34,6 +36,7 @@ mod = "mod4"                                     # Sets mod key to SUPER
 # myTerm = "xterm"                                 # My terminal of choice
 myTerm = "alacritty"                             # My terminal of choice
 myConfig = "/home/nils/.config/qtile/config.py"  # Qtile config file location
+prompt = "{0}@{1}: ".format(os.environ["USER"], socket.gethostname())  # prompt variable
 
 keys = [
     # Switch between windows in current stack pane
@@ -85,7 +88,7 @@ for i in groups:
 layouts = [
     layout.MonadTall(),
     layout.Max(),
-    # layout.Stack(num_stacks=2),
+    layout.Stack(num_stacks=2),
     ## Try more layouts by unleashing below layouts.
     # layout.Bsp(),
     # layout.Columns(),
@@ -95,8 +98,11 @@ layouts = [
     # layout.Tile(),
     # layout.TreeTab(),
     # layout.VerticalTile(),
+    # layout.Floating(),
     # layout.Zoomy(),
 ]
+
+##### DEFAULT WIDGET SETTINGS #####
 
 widget_defaults = dict(
     font='Inconsolata',
@@ -111,14 +117,15 @@ screens = [
             [
                 widget.CurrentLayout(),
                 widget.GroupBox(),
-                widget.Prompt(),
+                widget.Prompt(prompt = prompt),
                 widget.WindowName(),
                 # widget.TextBox("default config", name="default"),
                 widget.TextBox(text = "KBLO:"),
                 widget.KeyboardLayout(),
                 widget.TextBox( text = "BTTR:"),
-                widget.Battery(format = '{char} {percent:2.0%}'),
-                widget.BatteryIcon(),
+                widget.Battery(format = '{char} {percent:2.0%}', unknown_char
+                    = '#'),
+                # widget.BatteryIcon(),
                 widget.TextBox(text = "PCMN:"),
                 widget.Pacman(update_interval = 1800),
                 widget.TextBox( text = "updates"),
