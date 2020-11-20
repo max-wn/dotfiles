@@ -189,27 +189,26 @@ awaliable in wiki:
             reboot
 
 30. Update & upgrade system
-P>         
-sudo pacman -Syu
+    sudo pacman -Syu
 
 31. Users and groups.
-31.1. Add new user (-m means home dir will be created)
-    useradd -m <nameofuser>
-31.2. Add password for new user
-    passwd <nameofuser> <password>
-31.3. Add user to groups
-    usermod -aG wheel,audio,video,optical,storage,<nameofuser>
-31.4 Check user's groups
-    groups <nameofuser>
-31.5 Open sudoers file (/etc/sudoers) and uncomment wheel group
-    visudo
+    31.1. Add new user (-m means home dir will be created)
+        useradd -m <nameofuser>
+    31.2. Add password for new user
+        passwd <nameofuser> <password>
+    31.3. Add user to groups
+        usermod -aG wheel,audio,video,optical,storage,<nameofuser>
+    31.4 Check user's groups
+        groups <nameofuser>
+    31.5 Open sudoers file (/etc/sudoers) and uncomment wheel group
+        visudo
 
 32. Install xorg and video drivers
-sudo pacman -S xorg xorg-xinit xsorg-server xorg-drivers xorg-xmodmap
-xterm xcb-util-cursor
-    32.X. show mod keys (work only if WM starts):
+    sudo pacman -S xorg xorg-xinit xsorg-server xorg-drivers xorg-xmodmap
+    xterm xcb-util-cursor
+    32.1. show mod keys (work only if WM starts):
         xmodmap -pm
-    32.1. Check your video card (here I have nvidia and I will use
+    32.2. Check your video card (here I have nvidia and I will use
     proprietary driver)
         lspci -k | grep -E "(VGA|3D)"
     32.3. Uninstal conflict drivers. IMPORTANT!
