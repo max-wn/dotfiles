@@ -20,7 +20,9 @@ alias grep='grep --color=auto'
 alias mutt='cd ~/attachments && mutt' 
 
 ## PROMPT
-PS1='[\t \u@\h \W]\$ '
+# PS1='[\t \u@\h \W]\$ '
+# PS1='\[\033[38;5;2m\][\t \u@\h \W] \\$ \[$(tput sgr0)\]'
+PS1='\[\033[38;5;6m\][\t \u@\h \W] \\$ \[$(tput sgr0)\]'
 
 ## autostart programms
 neofetch
