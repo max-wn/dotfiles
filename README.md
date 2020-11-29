@@ -1,2 +1,2 @@
-# vimprojects
-my dotfiles and vim related materials
+# dotfiles
+my dotfiles
