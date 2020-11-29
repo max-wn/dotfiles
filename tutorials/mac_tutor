@@ -2,13 +2,19 @@
 MAC TRICKS AND COMMANDS
 ===============================================================================
 
-# команды для записи iso на флэшку
-$ diskutil list  # выдает список дисков и там ищем имя флэшки (сейчас это disk2)
-$ sudo diskutil umountDisk /dev/disk2 # "изымаем" типа флэшку при этом оставляя ее в разъеме
+$ diskutil list  # return names of disks (now flash is "disk2")
+
+# format flash
+$ sudo diskutil eraseDisk exfat FLASH /dev/disk2
+    exfat --> new file system on flash (as example)
+    FLASH --> new volume name
+
+# to write iso on flash
+$ sudo diskutil umountDisk /dev/disk2 # unmaunt flash before writing
 $ sudo dd if=/Users/Maksim/Downloads/debian-live-10.2.0-amd64-xfce.iso of=/dev/rdisk2 bs=1m
 
-# команда для записи ОС на флэшку
-# предварительно надо отформатировать флешку на Mac OS Extended и назвать MyVolume --> это важно
+# to write macОС on flash
+# first you should format flash to Mac OS Extended
+# and name it as "MyVolume" --> important!
 $ sudo /Applications/Install\ macOS\ Mojave.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume --applicationpath /Applications/Install\ macOS\ Mojave.app
-
 
