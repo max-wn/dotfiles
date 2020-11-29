@@ -7,7 +7,7 @@
 
 ## aliases
 alias ls='ls --color=auto'
-alias ll='ls -lah --color=auto'
+alias ll='ls -lah --color=auto --group-directories-first'
 #alias la='ls -A' 
 #alias l='ls -CF'
 alias dir='dir -lh --color=auto'
