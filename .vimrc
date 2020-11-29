@@ -1,7 +1,7 @@
 "============================================================================
 " MY VIMRC FILE
 "============================================================================
-" Creator             : WILLENBROCK 
+" Creator             : max-wn
 " Last change         : 30.05.2020
 " To use it, copy it to
 "    for Unix and OS/2: ~/.vimrc
@@ -28,18 +28,24 @@ set termguicolors
 " Put these in an autocmd group, so that we can delete them easily.
 augroup vimrcEx
 au!
-" Run xrdb whenever Xdefaults or Xresources are updated.
-autocmd BufWritePost *Xresources,*Xdefaults !xrdb %
+" run xrdb whenever Xdefaults or Xresources are updated
+    autocmd BufWritePost *Xresources,*Xdefaults !xrdb %
 
-" Reload the settings file without restarting Vim.
-autocmd BufWritePost .vimrc source $MYVIMRC
-" autocmd BufWritePost muttrc source /home/nils/.mutt/muttrc ???
+" reload the settings file without restarting Vim
+    autocmd BufWritePost .vimrc source $MYVIMRC
+   "autocmd BufWritePost muttrc source /home/nils/.mutt/muttrc ???
 
-" For all text files set 'textwidth' to 78 characters.
+" for all text files set 'textwidth' to 78 characters
     autocmd FileType text setlocal textwidth=78
 
 " limit the width of e-mail text to 78 characters
     au BufRead /tmp/mutt-* set tw=78
+
+" set exact commentary symbol for tpope/vimcommentary addon
+" first recognise the file type by command ':set filetype?' (for example
+" 'config')
+" then set apropriate sign (for example '#') by command:
+    autocmd FileType config setlocal commentstring=#\ %s 
 
 augroup END
 
@@ -50,7 +56,7 @@ augroup END
     set ruler                  " show number of cursor position (line, symbol)
     set shiftwidth=4           " replace tab to 4 spaces
     set expandtab              " epands tabs to space
-    set smarttab
+    set smarttab               " replace tab to spaces
     set tabstop=4              " replace tab to 4 spaces
     set softtabstop=4
     set expandtab

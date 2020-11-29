@@ -1,0 +1,31 @@
+## PEOPLE
+http://lukesmith.xyz/rss.xml "~LUKE SMITH: blog"
+https://notrelated.libsyn.com/rss "~LUKE SMITH: podcast"
+https://www.distrotube.com/videos/index.xml "~DEREK TAYLOR: videos"
+
+## YOUTUBE
+https://www.youtube.com/feeds/videos.xml?channel_id=UC2eYFnH61tmytImy1mTYvhA "~YOUTUBE: Luke Smith"
+https://www.youtube.com/feeds/videos.xml?channel_id=UC7YOGHUfC1Tb6E4pudI9STA "~YOUTUBE: Mental Outlaw"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCld68syR8Wi-GY_n4CaoJGA "~YOUTUBE: Brodie Robertson"
+https://www.youtube.com/feeds/videos.xml?channel_id=UC7c3Kb6jYCRj4JOHHZTxKsQ "~YOUTUBE: Github"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCP7RrmoueENv9TZts3HXXtw "~YOUTUBE: Guthub Training"
+https://www.youtube.com/feeds/videos.xml?channel_id=UC8butISFwT-Wl7EV0hUK0BQ "~YOUTUBE: Freecodecamp"
+https://www.youtube.com/feeds/videos.xml?channel_id=UC-sAMvDe7gTmBbub-rWljZg "~YOUTUBE: ADV-IT"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCCezIgC97PvUuR4_gbFUs5g "~YOUTUBE: Core Schafer"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCTfabOKD7Yty6sDF4POBVqA "~YOUTUBE: Joe Collins"
+https://www.youtube.com/feeds/videos.xml?channel_id=UC8ENHE5xdFSwx71u3fDH5Xw "~YOUTUBE: ThePrimeagen"
+https://www.youtube.com/feeds/videos.xml?channel_id=UC4JX40jDee_tINbkjycV4Sg "~YOUTUBE: Tech With Tim"
+
+## GITLAB
+https://gitlab.com/dwt1.atom "~GITLAB: Derek Taylor"
+
+## GITHUB
+https://github.com/LukeSmithxyz.atom "~GITHUB: Luke Smith"
+
+## NEWSFEED
+https://www.archlinux.org/feeds/news/ "tech" "~NEWSFEED: archlinux.org news"
+
+## REDDIT
+https://www.reddit.com/r/archlinux/new.rss "~REDDIT: r/archlinux"
+https://www.reddit.com/r/commandline/new.rss "~REDDIT: r/commandline"
+https://www.reddit.com/r/vim/new.rss "~REDDIT: r/vim"
