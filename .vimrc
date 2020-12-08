@@ -2,11 +2,10 @@
 " MY VIMRC FILE
 "============================================================================
 " Creator             : max-wn
-" Last change         : 30.05.2020
 " To use it, copy it to
 "    for Unix and OS/2: ~/.vimrc
 " for MS-DOS and Win32: $VIM\_vimrc
-"to make vim by defolt in linux execute this command in terminal:
+" to make vim by defolt in linux execute this command in terminal:
 "                       sudo update-alternatives --config editor
 "============================================================================
 
@@ -14,7 +13,7 @@
 call plug#begin('~/.vim/plugged')
 
 Plug 'mbbill/undotree'
-Plug 'morhetz/gruvbox'
+Plug 'gruvbox-community/gruvbox'
 Plug 'tpope/vim-commentary'
 
 call plug#end()
