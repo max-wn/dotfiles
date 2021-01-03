@@ -1,0 +1,13 @@
+#!/bin/sh
+##=============================================================================
+## my aliasrc for macOS
+##=============================================================================
+
+## Colorize commands when possible.
+alias \
+	ll="ls -lahG" \
+	grep="grep --color=auto" \
+	diff="diff --color=auto"
+
+## run mutt from attachments directory for save attachments in it
+alias mutt='cd ~/attachments && mutt'
