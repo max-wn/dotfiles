@@ -2,6 +2,12 @@
 ## MY ZSHRC
 #==============================================================================
 
+# enable editor
+export EDITOR="vim"
+
+# enable vi mode
+set -o vi
+
 # enable colors:
 autoload -U colors && colors	# Load colors
 
@@ -17,9 +23,14 @@ HISTFILE=~/.cache/zsh/history
 [ -f "$HOME/.config/aliasrc" ] && source "$HOME/.config/aliasrc"
 #alias ls="ls -lahG"
 
-# user specific environment and startup programs
+## user specific environment and startup programs
+# directory for scripts
 PATH=$PATH:$HOME/bin
 export PATH
+
+# directory for backup
+BACKUP_VOLUME_PATH="/Volumes/Samsung/backup"
+export BACKUP_VOLUME_PATH
 
 # autostart programms
 neofetch
