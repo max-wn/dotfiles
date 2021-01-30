@@ -1,8 +1,8 @@
 ## PEOPLE
-http://lukesmith.xyz/rss.xml                    "~LUKE SMITH:   blog"
-https://notrelated.libsyn.com/rss               "~LUKE SMITH:   podcast"
+http://lukesmith.xyz/rss.xml                    "~LUKE SMITH: blog"
+https://notrelated.libsyn.com/rss               "~LUKE SMITH: podcast"
 https://www.distrotube.com/videos/index.xml     "~DEREK TAYLOR: videos"
-https://sunknudsen.com/feeds/privacy-guides.xml "~SUN KNUDSEN:  privacy guides episodes"
+https://sunknudsen.com/feeds/privacy-guides.xml "~SUN KNUDSEN: privacy guides episodes"
 
 ## YOUTUBE
 https://www.youtube.com/feeds/videos.xml?channel_id=UC2eYFnH61tmytImy1mTYvhA "~YOUTUBE: Luke Smith"
@@ -34,4 +34,12 @@ https://www.reddit.com/r/commandline/new.rss "~REDDIT: r/commandline"
 https://www.reddit.com/r/vim/new.rss "~REDDIT: r/vim"
 
 ## TWITTER
-https://nitter.net/hacktoberfest/rss "~TWITTER: Hacktoberfest"
+https://nitter.net/hacktoberfest/rss   "~TWITTER: Hacktoberfest"
+https://nitter.net/GitHubGameOff/rss   "~TWITTER: GitHubGameOff"
+https://nitter.net/githubtraining/rss  "~TWITTER: githubtraining"
+https://nitter.net/github/rss          "~TWITTER: github"
+https://nitter.net/GitHubEducation/rss "~TWITTER: GitHubEducation"
+https://nitter.net/TwilioQuest/rss     "~TWITTER: TwilioQuest"
+https://nitter.net/StackOverflow/rss   "~TWITTER: StackOverflow"
+https://nitter.net/JetBrains_Edu/rss   "~TWITTER: JetBrains Edu"
+https://nitter.net/pycharm/rss         "~TWITTER: pycharm"
