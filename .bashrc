@@ -5,6 +5,9 @@
 ## If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+# enable vim mode in shell
+set -o vi
+
 ## aliases
 alias ls='ls --color=auto'
 alias ll='ls -lah --color=auto --group-directories-first'
@@ -15,6 +18,9 @@ alias dir='dir -lh --color=auto'
 alias grep='grep --color=auto'
 #alias fgrep='fgrep --color=auto'
 #alias egrep='egrep --color=auto'
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
 
 ## run mutt from attachments directory for save attachments in it 
 alias mutt='cd ~/attachments && mutt' 
