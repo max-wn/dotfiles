@@ -29,3 +29,6 @@ https://www.archlinux.org/feeds/news/ "tech" "~NEWSFEED: archlinux.org news"
 https://www.reddit.com/r/archlinux/new.rss "~REDDIT: r/archlinux"
 https://www.reddit.com/r/commandline/new.rss "~REDDIT: r/commandline"
 https://www.reddit.com/r/vim/new.rss "~REDDIT: r/vim"
+
+## TWITTER
+https://nitter.net/hacktoberfest/rss "~TWITTER: Hacktoberfest"
