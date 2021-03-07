@@ -60,7 +60,6 @@ augroup END
     set softtabstop=4
     set expandtab
     set smartindent
-    set nu
     set nowrap
     set smartcase
     set noswapfile
@@ -70,6 +69,7 @@ augroup END
     set incsearch
     set hidden
     set showcmd                " Display an incomplete command in the lower right corner
+    "set backspace=indent,eol,start  " make backspace works like in most other programs
 
 " Maping keys disable arrow keys in normal mode
     map <Down>  <NOP>         
