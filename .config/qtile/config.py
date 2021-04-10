@@ -24,154 +24,168 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-import os      # for correct work of prompt variable
-import socket  # for correct work of prompt variable
-from libqtile.config import Key, Screen, Group, Drag, Click
-from libqtile.lazy import lazy
-from libqtile import layout, bar, widget, hook
-
 from typing import List  # noqa: F401
 
-mod = "mod4"                                     # Sets mod key to SUPER
-# myTerm = "xterm"                                 # My terminal of choice
-myTerm = "alacritty"                             # My terminal of choice
-myConfig = "/home/nils/.config/qtile/config.py"  # Qtile config file location
-prompt = "{0}@{1}: ".format(os.environ["USER"], socket.gethostname())  # prompt variable
+from libqtile import bar, layout, widget
+from libqtile.config import Click, Drag, Group, Key, Match, Screen
+from libqtile.lazy import lazy
+from libqtile.utils import guess_terminal
+
+mod = "mod4"
+terminal = guess_terminal()
+#myConfig = "/home/nils/.config/qtile/config.py"  # Qtile config file location
 
 keys = [
-    # Switch between windows in current stack pane
-    Key([mod], "k", lazy.layout.down()),
-    Key([mod], "j", lazy.layout.up()),
+# Switch between windows
+Key([mod], "h", lazy.layout.left(), desc="Move focus to left"),
+Key([mod], "l", lazy.layout.right(), desc="Move focus to right"),
+Key([mod], "j", lazy.layout.down(), desc="Move focus down"),
+Key([mod], "k", lazy.layout.up(), desc="Move focus up"),
+Key([mod], "space", lazy.layout.next(),
+    desc="Move window focus to other window"),
 
-    # Move windows up or down in current stack
-    Key([mod, "control"], "k", lazy.layout.shuffle_down()),
-    Key([mod, "control"], "j", lazy.layout.shuffle_up()),
+# Move windows between left/right columns or move up/down in current stack.
+# Moving out of range in Columns layout will create new column.
+Key([mod, "shift"], "h", lazy.layout.shuffle_left(),
+    desc="Move window to the left"),
+Key([mod, "shift"], "l", lazy.layout.shuffle_right(),
+    desc="Move window to the right"),
+Key([mod, "shift"], "j", lazy.layout.shuffle_down(),
+    desc="Move window down"),
+Key([mod, "shift"], "k", lazy.layout.shuffle_up(), desc="Move window up"),
 
-    # Switch window focus to other pane(s) of stack
-    Key([mod], "space", lazy.layout.next()),
+# Grow windows. If current window is on the edge of screen and direction
+# will be to screen edge - window would shrink.
+Key([mod, "control"], "h", lazy.layout.grow_left(),
+    desc="Grow window to the left"),
+Key([mod, "control"], "l", lazy.layout.grow_right(),
+    desc="Grow window to the right"),
+Key([mod, "control"], "j", lazy.layout.grow_down(),
+    desc="Grow window down"),
+Key([mod, "control"], "k", lazy.layout.grow_up(), desc="Grow window up"),
+Key([mod], "n", lazy.layout.normalize(), desc="Reset all window sizes"),
 
-    # Swap panes of split stack
-    Key([mod, "shift"], "space", lazy.layout.rotate()),
+# Toggle between split and unsplit sides of stack.
+# Split = all windows displayed
+# Unsplit = 1 window displayed, like Max layout, but still with
+# multiple stack panes
+Key([mod, "shift"], "Return", lazy.layout.toggle_split(),
+    desc="Toggle between split and unsplit sides of stack"),
+Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
 
-    # Toggle between split and unsplit sides of stack.
-    # Split = all windows displayed
-    # Unsplit = 1 window displayed, like Max layout, but still with
-    # multiple stack panes
-    Key([mod, "shift"], "Return", lazy.layout.toggle_split()),
-    
-    Key([mod], "Return", lazy.spawn(myTerm)),
-    # Key([mod], "d", lazy.spawn("dmenu_run -p 'Run: '"),
+# Toggle between different layouts as defined below
+Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
+Key([mod], "q", lazy.window.kill(), desc="Kill focused window"),
 
-    # Toggle between different layouts as defined below
-    Key([mod], "Tab", lazy.next_layout()),
-    Key([mod], "q", lazy.window.kill()),
-
-    Key([mod, "control"], "r", lazy.restart()),
-    Key([mod, "control"], "q", lazy.shutdown()),
-    Key([mod], "r", lazy.spawncmd()),
+Key([mod, "control"], "r", lazy.restart(), desc="Restart Qtile"),
+Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
+Key([mod], "r", lazy.spawncmd(),
+    desc="Spawn a command using a prompt widget"),
 ]
 
 groups = [Group(i) for i in "123456789"]
 
 for i in groups:
     keys.extend([
-        ## mod1 + letter/number of group = switch to group
-        Key([mod], i.name, lazy.group[i.name].toscreen()),
+        # mod1 + letter of group = switch to group
+        Key([mod], i.name, lazy.group[i.name].toscreen(),
+        desc="Switch to group {}".format(i.name)),
 
-        ## mod1 + shift + letter/number of group = switch to & move focused window to group
-        Key([mod, "shift"], i.name, lazy.window.togroup(i.name, switch_group=True)),
-        ## Or, use below if you prefer not to switch to that group.
-        ## mod1 + shift + letter of group = move focused window to group
-        # Key([mod, "shift"], i.name, lazy.window.togroup(i.name)),
+        # mod1 + shift + letter of group = switch to & move focused window to group
+        Key([mod, "shift"], i.name, lazy.window.togroup(i.name, switch_group=True),
+        desc="Switch to & move focused window to group {}".format(i.name)),
+        # Or, use below if you prefer not to switch to that group.
+        # # mod1 + shift + letter of group = move focused window to group
+        # Key([mod, "shift"], i.name, lazy.window.togroup(i.name),
+        #     desc="move focused window to group {}".format(i.name)),
     ])
 
 layouts = [
-    layout.MonadTall(),
-    layout.Max(),
-    layout.Stack(num_stacks=2),
-    ## Try more layouts by unleashing below layouts.
-    # layout.Bsp(),
-    # layout.Columns(),
-    # layout.Matrix(),
-    # layout.MonadWide(),
-    # layout.RatioTile(),
-    # layout.Tile(),
-    # layout.TreeTab(),
-    # layout.VerticalTile(),
-    # layout.Floating(),
-    # layout.Zoomy(),
+layout.Columns(border_focus_stack='#d75f5f'),
+layout.Max(),
+# Try more layouts by unleashing below layouts.
+# layout.Stack(num_stacks=2),
+# layout.Bsp(),
+# layout.Matrix(),
+# layout.MonadTall(),
+# layout.MonadWide(),
+# layout.RatioTile(),
+# layout.Tile(),
+# layout.TreeTab(),
+# layout.VerticalTile(),
+# layout.Zoomy(),
 ]
 
-##### DEFAULT WIDGET SETTINGS #####
-
 widget_defaults = dict(
-    font='Inconsolata',
-    fontsize=14,
+    font='JetBrains Mono',
+    fontsize=13,
     padding=3,
 )
 extension_defaults = widget_defaults.copy()
 
 screens = [
-    Screen(
-        top=bar.Bar(
-            [
-                widget.CurrentLayout(),
-                widget.GroupBox(),
-                widget.Prompt(prompt = prompt),
-                widget.WindowName(),
-                # widget.TextBox("default config", name="default"),
-                widget.TextBox(text = "KBLO:"),
-                widget.KeyboardLayout(),
-                widget.TextBox( text = "BTTR:"),
-                widget.Battery(format = '{char} {percent:2.0%}', unknown_char
-                    = '#'),
-                # widget.BatteryIcon(),
-                widget.TextBox(text = "PCMN:"),
-                widget.Pacman(update_interval = 1800),
-                widget.TextBox( text = "updates"),
-                widget.TextBox(text = "VOL:"),
-                widget.Volume(),
-                widget.Systray(),
-                widget.TextBox( text = "DATE:"),
-                widget.Clock(format='%Y.%m.%d %a %H:%M'),
-                # widget.QuickExit(),
-            ],
-            24,
-        ),
+Screen(
+    top=bar.Bar(
+        [
+            widget.CurrentLayout(),
+            widget.GroupBox(),
+            widget.Prompt(),
+            widget.WindowName(),
+            widget.Chord(
+                chords_colors={
+                    'launch': ("#ff0000", "#ffffff"),
+                },
+                name_transform=lambda name: name.upper(),
+            ),
+            widget.TextBox("CNFG: my", name="default"),
+            widget.TextBox(text = "KBLO:"),
+            widget.KeyboardLayout(),
+            widget.TextBox(text = "BTTR:"),
+            widget.Battery(format = '{char} {percent:2.0%}', unknown_char = '#'),
+            widget.TextBox(text = "PCMN"),
+            widget.CheckUpdates(
+                update_interval = 1800,
+                distro = "Arch_checkupdates",
+                display_format = 'UPD: {updates}',
+                no_update_string = '#'),
+            #widget.TextBox(text = "updates"),
+            widget.TextBox(text = "VOL:"),
+            widget.Volume(),
+            #widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"),
+            widget.Systray(),
+            widget.TextBox( text = "DATE:"),
+            widget.Clock(format='%Y.%m.%d %a %H:%M'),
+            #widget.QuickExit(),
+        ],
+        24,
     ),
+),
 ]
 
 # Drag floating layouts.
 mouse = [
-    Drag([mod], "Button1", lazy.window.set_position_floating(),
-         start=lazy.window.get_position()),
-    Drag([mod], "Button3", lazy.window.set_size_floating(),
-         start=lazy.window.get_size()),
+Drag([mod], "Button1", lazy.window.set_position_floating(),
+     start=lazy.window.get_position()),
+Drag([mod], "Button3", lazy.window.set_size_floating(),
+     start=lazy.window.get_size()),
     Click([mod], "Button2", lazy.window.bring_to_front())
 ]
 
 dgroups_key_binder = None
 dgroups_app_rules = []  # type: List
-main = None
+main = None  # WARNING: this is deprecated and will be removed soon
 follow_mouse_focus = True
 bring_front_click = False
 cursor_warp = False
 floating_layout = layout.Floating(float_rules=[
     # Run the utility of `xprop` to see the wm class and name of an X client.
-    {'wmclass': 'confirm'},
-    {'wmclass': 'dialog'},
-    {'wmclass': 'download'},
-    {'wmclass': 'error'},
-    {'wmclass': 'file_progress'},
-    {'wmclass': 'notification'},
-    {'wmclass': 'splash'},
-    {'wmclass': 'toolbar'},
-    {'wmclass': 'confirmreset'},  # gitk
-    {'wmclass': 'makebranch'},  # gitk
-    {'wmclass': 'maketag'},  # gitk
-    {'wname': 'branchdialog'},  # gitk
-    {'wname': 'pinentry'},  # GPG key password entry
-    {'wmclass': 'ssh-askpass'},  # ssh-askpass
+    *layout.Floating.default_float_rules,
+    Match(wm_class='confirmreset'),  # gitk
+    Match(wm_class='makebranch'),  # gitk
+    Match(wm_class='maketag'),  # gitk
+    Match(wm_class='ssh-askpass'),  # ssh-askpass
+    Match(title='branchdialog'),  # gitk
+    Match(title='pinentry'),  # GPG key password entry
 ])
 auto_fullscreen = True
 focus_on_window_activation = "smart"
