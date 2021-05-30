@@ -1,73 +1,76 @@
 #============================================================================
-# MY MUTTRC FILE FOR YANDEX MAIL
+# MY MUTTRC FILE
 #============================================================================
-# Creator      : nils
 # Copy file to : ~/.muttrc
-# Date         : Вт июн 23 09:50:14 MSK 2020
+#        or to : ~/.mutt/muttrc
 # В каталоге   : /usr/share/doc/mutt-/samples
-# вы можете найти некоторые примеры файлов muttrc из официальной поставки.
+#                вы можете найти некоторые примеры файлов muttrc
+#                из официальной поставки.
 #============================================================================
+# BASIS
+set editor   = vim        # используемый редактор при составлении письма
+set visual   = vim        # редактор, вызываемый по ~v
+source $HOME/.mutt/accounts
 
-## From
-set from = your_mail@yandex.ru
-set realname = your_real_name
-set use_from = yes
-set envelope_from = yes
-set ssl_starttls = yes
-set ssl_force_tls = yes
+folder-hook 'gmail.com' 'source ~/.mutt/gmail'
+folder-hook 'yandex.ru' 'source ~/.mutt/yandex'
 
-## Creds
-set imap_user = ypur_mail@yandex.ru
-set imap_pass = your_password
-set smtp_url = smtps://your_mail@smtp.yandex.ru:465
-set smtp_pass = your_password
+# default account
+#source '~/.mutt/gmail'
+source '~/.mutt/yandex'
 
-## My mailboxes
-# mailboxes =INBOX =Отправленные =Черновики =Удаленные
-set spoolfile = imaps://your_mail@imap.yandex.ru # где расположена входящая почта (почтовый ящик МТА)
-set folder = imaps://imap.yandex.ru:993 # папка, где хранится вся обработанная почта
-set record = =Отправленные              # где хранить отправленную почту
-set postponed = =Черновики              # где хранить отложенные сообщения
-set trash = =Удаленные                  # где хранить trash сообщения
+account-hook gmail.com 'set imap_user=$my_gmail_user imap_pass=$my_gmail_pass'
+account-hook yandex.ru 'set imap_user=$my_yandex_user imap_pass=$my_yandex_pass'
 
-## Where to put the stuff
-set header_cache = ~/.mutt/cache/headers
-set message_cachedir = ~/.mutt/cache/bodies
-set certificate_file = ~/.mutt/certificates
-source ~/.mutt/contacts            # address book
+macro index <f2> '<change-folder>imaps://imap.yandex.ru<enter>'
+macro index <f3> '<change-folder>imaps://imap.gmail.com<enter>'
+
+set alias_file    = ~/.mutt/aliases  # address book
+set sort_alias    = alias
+set reverse_alias = yes
+source $alias_file
+set mailcap_path  = ~/.mutt/mailcap
+auto_view text/html
 set signature = ~/.mutt/signature  # signature
 
-## MISC
+# SIDEBAR
+set sidebar_visible = yes  # show sidebar
+set sidebar_width = 35     # width of the sidebar measured in screen columns
+set sidebar_sort_method = path  # Specifies how to sort mailbox entries in sidebar
+# remove INBOX.Foldername - leave just Foldername
+set sidebar_short_path
+# for the sidebar_format
+set mail_check_stats
+set sidebar_format = "%B%?F? [%F]?%* %?N?%N/?%S"
+# build a tree
+set sidebar_folder_indent
+# tree with spaces
+set sidebar_indent_string="|--"
+# navigation
+bind index,pager \Ck sidebar-prev           # Ctrl-k - Previous Mailbox
+bind index,pager \Cj sidebar-next           # Ctrl-j - Next Mailbox
+bind index,pager \Cl sidebar-open           # Ctrl-l - Open Highlighted Mailbox
+#bind index,pager \Cb sidebar-toggle-visible # Ctrl+b - Display/Hide Sidebar
+
+# MISC
 set sort = threads              # thread view
 set copy = yes                  # copy or do not copy sent mail
 set move = yes                  # copy or do not copy sent mail
 set sleep_time = 0              # disable artifitial pauses
 set nocollapse_unread           # никогда не сворачивать дискуссии с непрочитанными сообщениями
 set pager_index_lines=6         # количество строк показываемых в пейджере
-set mail_check = 60             # mail check time
 set read_inc=25                 # показать статусбар при загрузки сообщений
 set write_inc=25                # показать статусбар при подготовке сообщений
 set date_format="%d.%m.%y %I:%M%p"
 set index_format="%2C %Z %?X?A& ? %D %-15.15F %s (%-4.4c)"
 set menu_scroll                 # scroll index line by line
-
-## EDITOR
-set editor = vim # используемый редактор при составлении письма
-set visual = vim # редактор, вызываемый по ~v
-
-## IMAP
-unset imap_passive
-set imap_check_subscribed
-set imap_keepalive = 900
-
-## сортировку — что бы новые письма были сверху, и что бы отображались ответы
-set sort_browser=reverse-date
-set sort_aux=reverse-last-date-received
+set sort_browser=reverse-date   # сортировку новые письма были сверху
+set sort_aux=reverse-last-date-received  # что бы отображались ответы
 
 ## MAPPINGS
-# scroll message line by line using arraws
-# bind pager <up> previous-line
-# bind pager <down> next-line
+#scroll message line by line using arraws
+#bind pager <up> previous-line
+#bind pager <down> next-line
 
 ## vim like keys
 bind index G last-entry
@@ -88,13 +91,12 @@ color body blue default "( *[-+=#*~_]){6,}"
 #color header blue         default "From: "
 #color header brightyellow default "Subject: "
 #color header brightyellow default "Date: "
-
 color quoted  default  default  # выделять все цитаты цветом
-# color quoted1 cyan  default
-# color quoted2 green default
-# color quoted3 cyan  default
-# color quoted4 green default
-# color quoted5 cyan  default
+#color quoted1 cyan  default
+#color quoted2 green default
+#color quoted3 cyan  default
+#color quoted4 green default
+#color quoted5 cyan  default
 color error     red      default  # error messages
 color message   white    default  # message  informational messages
 color indicator default      red  # indicator for the "current message"
@@ -103,12 +105,23 @@ color tree      blue     default  # the "tree" display of threads within the fol
 color search    white    blue     # search matches found with search within the internal pager
 color markers   red      default  # The markers indicate a wrapped line hen showing messages with looong lines
 color index     default    default '.*'
-color index     green   default '~O'
-color index     green   default '~N'
+color index     green   default '~O'   # old messages
+color index     green   default '~N'   # new messages
 color index     red      default '~F'  # Flagged Messages are important!
+color index     red      default '~T'  # tagged messages
 color index     yellow   default '~D'  # Deleted Mails - use dark color as these are already "dealt with"
 color signature red      default       # выделять подпись в письме цветом
 color prompt    brightmagenta default
 color tilde     brightmagenta default
-
+# sidebar color
+# currently opened folder
+color sidebar_indicator default red
+# cursor on a folder
+color sidebar_highlight black white
+# folder with new messages
+color sidebar_new       green default
+# folder with no new/flagged mails, etc.
+color sidebar_flagged   blue default
+# dividing line between the Sidebar and the Index/Pager panels
+color sidebar_divider   default default
 ###############################################################################
