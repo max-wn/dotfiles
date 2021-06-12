@@ -1,12 +1,12 @@
-"============================================================================
+"==============================================================================
 " MY VIMRC FILE
-"============================================================================
+"==============================================================================
 " To use it, copy it to
 "    for Unix and OS/2: ~/.vimrc
 " for MS-DOS and Win32: $VIM\_vimrc
 " to make vim by defolt in linux execute this command in terminal:
 "                       sudo update-alternatives --config editor
-"============================================================================
+"==============================================================================
 "set nocompatible    " use it if you do not have .vimrc
 let mapleader = " "  " by default it is \
 
@@ -23,7 +23,8 @@ call plug#end()
 let g:gruvbox_contrast_dark = 'hard'
 colorscheme gruvbox
 set background=dark
-set termguicolors
+"set termguicolors  " When on, uses |highlight-guifg| and |highlight-guibg|
+                    " attributes in the terminal (thus using 24-bit color).
 
 " Put these in an autocmd group, so that we can delete them easily.
 augroup vimrcEx
@@ -107,11 +108,11 @@ augroup END
     set shortmess+=c
 
     set colorcolumn=80
-    highlight ColorColumn ctermbg=lightgrey guibg=lightgrey
+    highlight ColorColumn ctermbg=0 guibg=lightgrey
 
 
 " ALACRITTY VIM SYNTAX HIGHLITING FIX
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48:2;%lu;%lu;%lum"
 
-" #################### EOF ####################
+"==============================================================================
