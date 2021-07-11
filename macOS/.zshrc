@@ -15,11 +15,14 @@ autoload -U colors && colors	# Load colors
 PROMPT="%F{green}%*%f%F{green} %f%F{green}%n%f%F{green}@%f%F{green}%m%f%F{green} %f%F{green}%~%f%F{green} $ %f"
 
 # history in cache directory:
-HISTSIZE=5000
-SAVEHIST=5000
-HISTFILE=~/.cache/zsh/history
-export HISTCONTROL=ignoreboth
-export HISTTIMEFORMAT="%h %d %H:%M:%S "
+export HISTSIZE=5000  # the number of items for the internal history list
+export SAVEHIST=5000  # maximum number of items for the history file
+export HISTFILE=~/.cache/zsh/history  # history file location
+setopt HIST_IGNORE_ALL_DUPS  # do not put duplicated command into history list
+setopt HIST_SAVE_NO_DUPS  # do not save duplicated command
+setopt HIST_REDUCE_BLANKS  # remove unnecessary blanks
+setopt INC_APPEND_HISTORY_TIME  # append command to history file immediately after execution
+setopt EXTENDED_HISTORY  # record command start time
 
 # for my aliases stored in aliasrc
 [ -f "$HOME/.config/aliasrc" ] && source "$HOME/.config/aliasrc"
