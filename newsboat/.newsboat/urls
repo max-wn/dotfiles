@@ -1,9 +1,8 @@
 ## PEOPLE
-https://lukesmith.xyz/rss.xml                   "~LUKE SMITH: blog"
-https://notrelated.libsyn.com/rss               "~LUKE SMITH: podcast"
-https://landchad.net/rss.xml                    "~LUKE SMITH: tutorials about creating and managing websites"
-https://www.distrotube.com/videos/index.xml     "~DEREK TAYLOR: videos"
-https://sunknudsen.com/feeds/privacy-guides.xml "~SUN KNUDSEN: privacy guides episodes"
+https://lukesmith.xyz/rss.xml            "~LUKE SMITH: blog"
+https://notrelated.libsyn.com/rss        "~LUKE SMITH: podcast"
+https://landchad.net/rss.xml             "~LUKE SMITH: tutorials about creating and managing websites"
+https://sunknudsen.com/feeds/vlog.xml    "~SUN KNUDSEN: privacy guides episodes"
 
 ## PEERTUBE
 https://videos.lukesmith.xyz/feeds/videos.xml?accountId=3  "~PEERTUBE: Luke Smith"
