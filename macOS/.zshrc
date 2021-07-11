@@ -18,6 +18,8 @@ PROMPT="%F{green}%*%f%F{green} %f%F{green}%n%f%F{green}@%f%F{green}%m%f%F{green}
 HISTSIZE=5000
 SAVEHIST=5000
 HISTFILE=~/.cache/zsh/history
+export HISTCONTROL=ignoreboth
+export HISTTIMEFORMAT="%h %d %H:%M:%S "
 
 # for my aliases stored in aliasrc
 [ -f "$HOME/.config/aliasrc" ] && source "$HOME/.config/aliasrc"
