@@ -14,28 +14,35 @@ source $HOME/.mutt/accounts
 
 folder-hook 'gmail.com' 'source ~/.mutt/gmail'
 folder-hook 'yandex.ru' 'source ~/.mutt/yandex'
+folder-hook 'icloud.com' 'source ~/.mutt/icloud'
 
 # default account
-#source '~/.mutt/gmail'
 source '~/.mutt/yandex'
+#source '~/.mutt/gmail'
+#source '~/.mutt/icloud'
 
-account-hook gmail.com 'set imap_user=$my_gmail_user imap_pass=$my_gmail_pass'
 account-hook yandex.ru 'set imap_user=$my_yandex_user imap_pass=$my_yandex_pass'
+account-hook gmail.com 'set imap_user=$my_gmail_user imap_pass=$my_gmail_pass'
+account-hook icloud.com 'set imap_user=$my_icloud_user imap_pass=$my_icloud_pass'
 
 macro index <f2> '<change-folder>imaps://imap.yandex.ru<enter>'
 macro index <f3> '<change-folder>imaps://imap.gmail.com<enter>'
+macro index <f4> '<change-folder>imaps://imap.icloud.com<enter>'
 
 set alias_file    = ~/.mutt/aliases  # address book
 set sort_alias    = alias
 set reverse_alias = yes
 source $alias_file
+
 set mailcap_path  = ~/.mutt/mailcap
 auto_view text/html
 set signature = ~/.mutt/signature  # signature
 
+set certificate_file = ~/.mutt/certificates
+
 # SIDEBAR
 set sidebar_visible = yes  # show sidebar
-set sidebar_width = 35     # width of the sidebar measured in screen columns
+set sidebar_width = 26     # width of the sidebar measured in screen columns
 set sidebar_sort_method = path  # Specifies how to sort mailbox entries in sidebar
 # remove INBOX.Foldername - leave just Foldername
 set sidebar_short_path
@@ -47,17 +54,26 @@ set sidebar_folder_indent
 # tree with spaces
 set sidebar_indent_string="|--"
 # navigation
-bind index,pager \Ck sidebar-prev           # Ctrl-k - Previous Mailbox
-bind index,pager \Cj sidebar-next           # Ctrl-j - Next Mailbox
+bind index,pager \Cp sidebar-prev           # Ctrl-k - Previous Mailbox
+bind index,pager \Cn sidebar-next           # Ctrl-j - Next Mailbox
 bind index,pager \Cl sidebar-open           # Ctrl-l - Open Highlighted Mailbox
 #bind index,pager \Cb sidebar-toggle-visible # Ctrl+b - Display/Hide Sidebar
+# vim like keys
+bind index gg first-entry
+bind index G last-entry
+bind index "S" imap-fetch-mail  # fetch new email
+bind pager k previous-line
+bind pager j next-line
+bind pager gg top
+bind pager G  bottom
 
 # MISC
-set sort = threads              # thread view
-set copy = yes                  # copy or do not copy sent mail
-set move = yes                  # copy or do not copy sent mail
-set sleep_time = 0              # disable artifitial pauses
+set sort=threads                # thread view
+set copy=yes                    # copy or do not copy sent mail
+#set move=yes                   # whether or not Mutt will move read messages from your spool mailbox to your $mbox mailbox
+set sleep_time=0                # disable artifitial pauses
 set nocollapse_unread           # никогда не сворачивать дискуссии с непрочитанными сообщениями
+set pager_context=3             # Display 3 lines of context in pager
 set pager_index_lines=6         # количество строк показываемых в пейджере
 set read_inc=25                 # показать статусбар при загрузки сообщений
 set write_inc=25                # показать статусбар при подготовке сообщений
@@ -66,16 +82,6 @@ set index_format="%2C %Z %?X?A& ? %D %-15.15F %s (%-4.4c)"
 set menu_scroll                 # scroll index line by line
 set sort_browser=reverse-date   # сортировку новые письма были сверху
 set sort_aux=reverse-last-date-received  # что бы отображались ответы
-
-## MAPPINGS
-#scroll message line by line using arraws
-#bind pager <up> previous-line
-#bind pager <down> next-line
-
-## vim like keys
-bind index G last-entry
-bind index gg first-entry
-bind index "S" imap-fetch-mail  # fetch new email
 
 ## COLOR SCHEME
 color normal     default   default
