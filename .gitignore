@@ -1,2 +1,9 @@
 *~
-*.db*
+
+# for moc player
+moc/.config/moc/cache/
+moc/.config/moc/equalizer
+moc/.config/moc/last_directory
+moc/.config/moc/playlist.m3u
+moc/.config/moc/softmixer
+moc/.config/moc/pid

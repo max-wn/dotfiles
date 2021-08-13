@@ -81,7 +81,7 @@ toggle_layout         = l
 toggle_hidden_files   = H
 show_lyrics           = L
 theme_menu            = T
-help                  = h ?
+help                  = ?
 refresh               = ^r
 reload                = r
 
@@ -93,7 +93,7 @@ seek_backward_fast    = [
 pause                 = p
 stop                  = s
 next                  = n
-previous              = b
+previous              = N
 toggle_shuffle        = S
 toggle_repeat         = R
 toggle_auto_next      = X
