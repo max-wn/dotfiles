@@ -1,12 +1,6 @@
 !============================================================================
-!  ____ _____ 
-! |  _ \_   _|      Creator: Derek Taylor (DistroTube)
-! | | | || |                 http://www.youtube.com/c/DistroTube
-! | |_| || |                 http://www.gitlab.com/dwt1/ 
-! |____/ |_|    modified by: WILLENBROCK	
-!     To use it, copy it to: ~/.Xresources
-!             Documentation: https://wiki.archlinux.org/index.php/Xterm
-!                            https://invisible-island.net/xterm/
+! To use it, copy it to: ~/.Xresources
+! Documentation: https://wiki.archlinux.org/index.php/Xterm
 !============================================================================
 
 Xft.dpi: 96
@@ -18,12 +12,13 @@ Xft.hintstyle: hintfull
 Xft.lcdfilter: lcdfilter
 
 XTerm*renderFont: true
-XTerm*faceName: xft:Noto Sans Mono SemiCondensed, \
-            xft:JoyPixels:size=12, \
-            xft:Monospace:style=Medium:size=12   
+XTerm*faceName: xft:JetBrains Mono, \
+                xft:JoyPixels:size=12, \
+                xft:Monospace:style=Medium:size=12
 XTerm*faceSize: 11
 XTerm*utf8: 2
 XTerm*locale: true
+
 ! two lines below for use Alt witout errors in symbols
 XTerm*metaSendsEscape: true
 XTerm*eightBitInput: false
@@ -45,38 +40,8 @@ XTerm*savelines: 16384
 ! double-click to select whole URLs :D
 XTerm*charClass: 33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
 
-URxvt*imLocale: en_US.UTF-8
-URxvt*termName: rxvt-unicode-256color
-URxvt*buffered: false
-URxvt.intensityStyles: false
-URxvt.font: xft:Mononoki Nerd Font:size=12, \
-        xft:JoyPixels:size=12, \
-        xft:Monospace:style=Medium:size=12   
-URxvt.saveLines: 2000
-URxvt.scrollBar: false
-URxvt.cursorColor: white
-
-!! Extensions
-URxvt.perl-ext-common: default,matcher,resize-font,url-select,keyboard-select,clipboard
-URxvt.colorUL: #4682B4
-!! url-select
-URxvt.keysym.M-u: perl:url-select:select_next
-URxvt.url-select.launcher: urxvt -e lynx -cfg=~/.lynx.cfg -lss=~/.lynx.lss
-URxvt.url-select.underline: true
-!! keyboard-select:
-URxvt.keysym.M-Escape: perl:keyboard-select:activate
-!! resize-font
-URxvt.keysym.C-k:   font-size:increase
-URxvt.keysym.C-j:   font-size:decrease
-!! Matcher
-URxvt.url-launcher:	urxvt -e lynx -cfg=~/.lynx.cfg -lss=~/.lynx.lss
-URxvt.matcher.button: 1
-!!clipboard
-URxvt.keysym.M-c: perl:clipboard:copy
-URxvt.keysym.M-v: perl:clipboard:paste
-URxvt*depth: 32
-
-! COLOR TABLE FOR INFO
+/* ! COLORS */
+/* ! COLOR TABLE FOR INFO */
 /* name   dark light */
 /* black  0    8     */
 /* red    1    9     */
@@ -87,27 +52,9 @@ URxvt*depth: 32
 /* cyan   6    14    */
 /* white  7    15    */
 
-!! COLORS
-! Special
-URxvt*foreground:   #ebdbb2
-URxvt*background:   #1d2021
-URxvt*cursorColor:  #ff0000
-XTerm*foreground:   #ebdbb2
-XTerm*background:   #1d2021
-XTerm*cursorColor:  #ff0000
-! отключаем жирный шрифт и вместо него делаем текст Aqua.
-XTerm.vt100.colorBDMode: true
-XTerm.vt100.colorBD:     #00ffff
-! отключаем подчеркнутый текст и вместо него делаем его белым.
-XTerm.vt100.colorULMode: true
-XTerm.vt100.colorUL:     #ffffff
-! аналогично использовать colorIT для курсива делаем его Olive
-XTerm.vt100.colorITMode: true
-XTerm.vt100.colorIT:     #808000
-
-! -----------------------------------------------------------------------------
-/* ! INITIAL SCHEME */ 
-! -----------------------------------------------------------------------------
+/* !------------------------------------------------------------------------ */
+/* ! INITIAL SCHEME */
+/* !------------------------------------------------------------------------ */
 /* ! black */
 /* *.color0:       #000000 */
 /* *.color8:       #434758 */
@@ -219,4 +166,3 @@ XTerm.vt100.colorIT:     #808000
 /* *.color14: nord7 */
 /* *.color15: nord6 */
 
-##########EOF##################################################################
