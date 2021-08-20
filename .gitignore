@@ -7,3 +7,8 @@ moc/.config/moc/last_directory
 moc/.config/moc/playlist.m3u
 moc/.config/moc/softmixer
 moc/.config/moc/pid
+
+# for mc
+mc/.config/mc/ini
+mc/.config/mc/panels.ini
+
