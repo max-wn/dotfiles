@@ -1,6 +1,6 @@
 # GENERAL OPTIONS
-set header_cache     = ~/.mutt/gmail.com/cache/headers
-set message_cachedir = ~/.mutt/gmail.com/cache/bodies
+set header_cache     = ~/Mail/gmail.com/cache/headers
+set message_cachedir = ~/Mail/gmail.com/cache/bodies
 unset record
 
 # RECEIVE OPTIONS

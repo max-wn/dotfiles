@@ -1,8 +1,0 @@
-# My accounts
-set my_name         = 'Maks'  # your nick name
-set realname        = 'Maks'  # your real name
-set my_gmail_user   = 'xxxxx@gmail.com'
-set my_gmail_pass   = `pass show mail/secret@gmail.com`  # password via pass
-set my_yandex_user  = 'xxxxx@yandex.ru'
-set my_yandex_pass  = `pass show mail/secret@yandex.ru`  # password via pass
-
