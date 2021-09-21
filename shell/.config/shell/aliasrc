@@ -1,0 +1,18 @@
+#!/bin/zsh
+
+# Colorize commands when possible.
+alias \
+	ll="ls -lahG" \
+	grep="grep --color=auto" \
+	diff="diff --color=auto" \
+    rm="rm -i" \
+    cp="cp -i" \
+    mv="mv -i"
+
+# run mutt from attachments directory for save attachments in it
+alias mutt='cd ~/attachments && mutt'
+
+# rum moc in XDG directory
+# -M --moc-dir DIR --> Use the specified MOC directory instead of the default
+alias mocp='mocp -M "$XDG_CONFIG_HOME"/moc'
+
