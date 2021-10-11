@@ -12,3 +12,6 @@ moc/.config/moc/pid
 mc/.config/mc/ini
 mc/.config/mc/panels.ini
 
+# for python
+__pycache__/
+
