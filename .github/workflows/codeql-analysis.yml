@@ -12,7 +12,7 @@
 name: "CodeQL"
 
 paths:
-  - qtile
+  - '**/*.py'
 
 on:
   push:
