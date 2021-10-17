@@ -145,7 +145,7 @@ screens = [
                 widget.TextBox(text = "PCMN"),
                 widget.CheckUpdates(
                     update_interval = 1800,
-                    distro = "Arch_checkupdates",
+                    distro = "Arch",
                     display_format = 'UPD: {updates}',
                     no_update_string = '#'),
                 #widget.TextBox(text = "updates"),
