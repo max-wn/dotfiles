@@ -7,6 +7,7 @@
 
 # directory for scripts
 export PATH="$HOME/bin":$PATH
+export PATH="/usr/local/sbin:$PATH"
 
 # directory for backup
 BACKUP_VOLUME_PATH="/Volumes/Samsung/backup"
