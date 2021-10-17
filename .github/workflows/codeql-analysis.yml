@@ -11,6 +11,9 @@
 #
 name: "CodeQL"
 
+paths:
+  - '**/*.py'
+
 on:
   push:
     branches: [ master, dev ]
