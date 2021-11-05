@@ -1,6 +1,7 @@
+# for misc
 *~
 
-# for moc player
+# for mocp player
 moc/.config/moc/cache/
 moc/.config/moc/equalizer
 moc/.config/moc/last_directory
@@ -8,10 +9,19 @@ moc/.config/moc/playlist.m3u
 moc/.config/moc/softmixer
 moc/.config/moc/pid
 
-# for mc
+# for mc (midnight commander)
 mc/.config/mc/ini
 mc/.config/mc/panels.ini
 
 # for python
 __pycache__/
+
+# for mpd
+mpd/.config/mpd/database
+mpd/.config/mpd/log
+mpd/.config/mpd/state
+mpd/.config/mpd/sticker.sql
+
+# for ncmpcpp
+ncmpcpp/.config/ncmpcpp/error.log
 
