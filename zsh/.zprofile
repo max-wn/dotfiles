@@ -7,6 +7,7 @@
 
 # directory for scripts
 export PATH="$HOME/bin":$PATH
+export PATH="/usr/local/sbin:$PATH"
 
 # directory for backup
 BACKUP_VOLUME_PATH="/Volumes/Samsung/backup"
@@ -16,9 +17,6 @@ export BACKUP_VOLUME_PATH
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CACHE_HOME="$HOME/.cache"
-#export ZDOTDIR="${XDG_CONFIG_HOME:-$HOME/.config}/zsh"
-#export HISTFILE="${XDG_DATA_HOME:-$HOME/.local/share}/history"
-
 
 # for gpg
 export GPG_TTY=$(tty)

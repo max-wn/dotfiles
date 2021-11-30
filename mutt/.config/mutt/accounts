@@ -4,7 +4,7 @@ set realname        = 'Max'  # your real name
 set my_gmail_user   = `pass show mail/gmail_user_for_mutt_max`      # user name via pass
 set my_gmail_pass   = `pass show mail/gmail_password_for_mutt_max`  # password via pass
 set my_yandex_user  = `pass show mail/yandex_user_for_mutt_max`     # user name via pass
-set my_yandex_pass  = `pass show mail/max@yandex.ru`                # password via pass
+set my_yandex_pass  = `pass show mail/yandex_password_max`          # password via pass
 set my_icloud_user  = `pass show mail/icloud_user_for_mutt_max`     # user name via pass
 set my_icloud_pass  = `pass show mail/icloud_password_for_mutt_max` # password via pass
 

@@ -13,6 +13,5 @@ alias \
 alias mutt='cd ~/attachments && mutt'
 
 # rum moc in XDG directory
-# -M --moc-dir DIR --> Use the specified MOC directory instead of the default
 alias mocp='mocp -M "$XDG_CONFIG_HOME"/moc'
 
