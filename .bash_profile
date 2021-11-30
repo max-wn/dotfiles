@@ -9,9 +9,6 @@
 export EDITOR="vim"
 export BROWSER="firefox"
 
-## enable vim mode in shell
-#set -o vi
-
 # user specific environment and startup programs
 # dir for scripts
 export PATH="$HOME/bin":$PATH
@@ -22,10 +19,13 @@ export XDG_CACHE_HOME="$HOME/.cache"
 # dir for backup
 export BACKUP_VOLUME_PATH="/Volumes/Samsung/backup"
 
-# PROMPT
+# prompt
 #PS1='[\t \u@\h \W]\$ '
 #PS1='\[\033[38;5;2m\][\t \u@\h \W] \\$ \[$(tput sgr0)\]'
 #PS1='\[\033[38;5;6m\][\t \u@\h \W] \\$ \[$(tput sgr0)\]'
 
 # autostart programms
 neofetch
+
+# for gnupg
+#export GPG_TTY=$(tty)
