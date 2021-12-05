@@ -6,7 +6,8 @@ alias \
 
 # bash aliases with colorized commands when possible.
 alias \
-	lb="ls -lah --color=auto"
+	lb="ls -lah --color=auto" \
+	diffb="diff -rys --color=auto"
 
 # zsh and bash aliases
 # misc
