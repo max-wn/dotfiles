@@ -1,17 +1,23 @@
 #!/bin/sh
 
-# Colorize commands when possible.
+# zsh aliases with colorized commands when possible.
 alias \
-	ll="ls -lahG" \
+	ll="ls -lahG"
+
+# bash aliases with colorized commands when possible.
+alias \
+	lb="ls -lah --color=auto"
+
+# zsh and bash aliases
+# misc
+alias \
 	grep="grep --color=auto" \
-	diff="diff --color=auto" \
+	diff="diff -rys" \
     rm="rm -i" \
     cp="cp -i" \
     mv="mv -i"
-
 # run mutt from attachments directory for save attachments in it
 alias mutt='cd ~/attachments && mutt'
-
 # rum moc in XDG directory
 alias mocp='mocp -M "$XDG_CONFIG_HOME"/moc'
 
