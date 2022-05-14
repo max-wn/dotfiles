@@ -1,18 +1,44 @@
-## PEOPLE
+# feed that contains all unread articles:
+"query:Unread Articles:unread = \"yes\""
+
+# -------- Starred Articles / Flagged Articles {{{
+# ------------------------------------------------------
+# https://newsboat.org/releases/2.10.1/docs/newsboat.html#_flagging_articles
+# https://github.com/akrennmair/newsbeuter/issues/464#issuecomment-272574679
+# Usage: go to an article, press Ctrl+e, press s, press enter; it will now show up in your 'Starred Articles' query feed
+# To Cancle: press Escape
+"query:Starred Articles:flags # \"s\""
+
+# }}}
+
+# -------- Filter Feeds {{{
+# ------------------------------------------------------
+# https://newsboat.org/releases/2.11.1/docs/newsboat.html#_filter_language
+# as an example:
+#https://thepiratebay.org/rss//top100/0 "BTRSS"
+#https://www.torrentdownload.ch/feed_latest "BTRSS"
+
+#"query:Only 720p:tags =~ \"BTRSS\" and ( title =~ \"720p\" )" "BTRSS"
+#"query:Only 1080p:tags =~ \"BTRSS\" and ( title =~ \"1080p\" )" "BTRSS"
+#"query:Only SD:tags =~ \"BTRSS\" and ( title =~ \"hdtv|x264|web\" )" "BTRSS"
+
+# }}}
+
+# PEOPLE
 https://lukesmith.xyz/rss.xml            "~LUKE SMITH: blog"
 https://notrelated.libsyn.com/rss        "~LUKE SMITH: podcast"
 https://landchad.net/rss.xml             "~LUKE SMITH: tutorials about creating and managing websites"
 https://sunknudsen.com/feeds/vlog.xml    "~SUN KNUDSEN: privacy guides episodes"
 
-## PEERTUBE
+# PEERTUBE
 https://videos.lukesmith.xyz/feeds/videos.xml?accountId=3  "~PEERTUBE: Luke Smith"
 
-## YOUTUBE
+# YOUTUBE
 https://www.youtube.com/feeds/videos.xml?channel_id=UC2eYFnH61tmytImy1mTYvhA "~YOUTUBE: Luke Smith"
 https://www.youtube.com/feeds/videos.xml?channel_id=UC7YOGHUfC1Tb6E4pudI9STA "~YOUTUBE: Mental Outlaw"
 https://www.youtube.com/feeds/videos.xml?channel_id=UCld68syR8Wi-GY_n4CaoJGA "~YOUTUBE: Brodie Robertson"
 https://www.youtube.com/feeds/videos.xml?channel_id=UC7c3Kb6jYCRj4JOHHZTxKsQ "~YOUTUBE: Github"
-https://www.youtube.com/feeds/videos.xml?channel_id=UCP7RrmoueENv9TZts3HXXtw "~YOUTUBE: Guthub Training"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCP7RrmoueENv9TZts3HXXtw "~YOUTUBE: Github Training"
 https://www.youtube.com/feeds/videos.xml?channel_id=UC8butISFwT-Wl7EV0hUK0BQ "~YOUTUBE: Freecodecamp"
 https://www.youtube.com/feeds/videos.xml?channel_id=UC-sAMvDe7gTmBbub-rWljZg "~YOUTUBE: ADV-IT"
 https://www.youtube.com/feeds/videos.xml?channel_id=UCCezIgC97PvUuR4_gbFUs5g "~YOUTUBE: Core Schafer"
@@ -22,21 +48,21 @@ https://www.youtube.com/feeds/videos.xml?channel_id=UC4JX40jDee_tINbkjycV4Sg "~Y
 https://www.youtube.com/feeds/videos.xml?channel_id=UCQxhrxXQTUXJhQcM6yeh06A "~YOUTUBE: Frolov"
 https://www.youtube.com/feeds/videos.xml?channel_id=UCkHN7h7CFeYL6Y1N5JcEZug "~YOUTUBE: Sun Knudsen"
 
-## GITLAB
+# GITLAB
 https://gitlab.com/dwt1.atom "~GITLAB: Derek Taylor"
 
-## GITHUB
+# GITHUB
 https://github.com/LukeSmithxyz.atom "~GITHUB: Luke Smith"
 
-## NEWSFEED
-https://www.archlinux.org/feeds/news/ "tech" "~NEWSFEED: archlinux.org news"
+# NEWSFEED
+https://www.archlinux.org/feeds/news/ "archlinux" "~NEWSFEED: archlinux.org news"
 
-## REDDIT
+# REDDIT
 https://www.reddit.com/r/archlinux/new.rss   "~REDDIT: r/archlinux"
 https://www.reddit.com/r/commandline/new.rss "~REDDIT: r/commandline"
 https://www.reddit.com/r/vim/new.rss         "~REDDIT: r/vim"
 
-## TWITTER (examples for nitter feeds)
+# TWITTER (examples for nitter feeds)
 https://nitter.net/hacktoberfest/rss   "~TWITTER: Hacktoberfest"
 https://nitter.net/GitHubGameOff/rss   "~TWITTER: GitHubGameOff"
 https://nitter.net/githubtraining/rss  "~TWITTER: githubtraining"
