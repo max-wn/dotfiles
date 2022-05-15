@@ -1,6 +1,8 @@
 # general settings
 #show-read-feeds no
-auto-reload yes
+auto-reload yes  # auto reload or use crontab instead ( 0 */2 * * * /usr/bin/newsboat -x reload )
+prepopulate-query-feeds yes
+save-path ~/attachments
 
 # urlscan
 external-url-viewer "urlscan"
