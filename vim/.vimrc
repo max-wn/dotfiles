@@ -10,12 +10,29 @@
 "set nocompatible    " use it if you do not have .vimrc
 let mapleader = " "  " by default it is \
 
+" vimwiki - Personal Wiki for Vim (Markdown Supported) {{{
+" enable internal plugins for different filetypes
+filetype plugin on
+" enable markdown in vimwiki
+let g:vimwiki_list = [{'path': '~/vimwiki/',
+            \ 'syntax': 'markdown', 'ext': '.md'}]
+" disable treatind every file with .md file-extension as a wiki
+let g:vimwiki_global_ext = 0
+" Makes vimwiki markdown links as [text](text.md) instead of [text]text()
+let g:vimwiki_markdown_link_ext = 1
+" Alternative you can set vimwiki to use markdown syntax but a different
+" file-extension, like the default .wiki.
+" Toggle checkbox of a list item on/off (remap to <Ctrl-t>.
+    nmap <C-t> <Plug>VimwikiToggleListItem
+" }}}
+
 " PLUGINS
 call plug#begin('~/.vim/plugged')
 
 Plug 'mbbill/undotree'
 Plug 'gruvbox-community/gruvbox'
 Plug 'tpope/vim-commentary'
+Plug 'vimwiki/vimwiki'
 
 call plug#end()
 

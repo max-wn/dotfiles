@@ -1,11 +1,14 @@
+"========== UNREAD ============================================================
 # feed that contains all unread articles:
 "query:Unread Articles:unread = \"yes\""
 
+"========== IMPORTANT =========================================================
 # -------- Starred Articles / Flagged Articles {{{
 # ------------------------------------------------------
 # https://newsboat.org/releases/2.10.1/docs/newsboat.html#_flagging_articles
 # https://github.com/akrennmair/newsbeuter/issues/464#issuecomment-272574679
-# Usage: go to an article, press Ctrl+e, press s, press enter; it will now show up in your 'Starred Articles' query feed
+# Usage: go to an article, press Ctrl+e, press s, press enter; it will now
+# show up in your 'Starred Articles' query feed
 # To Cancle: press Escape
 "query:Starred Articles:flags # \"s\""
 # }}}
@@ -21,110 +24,134 @@
 #"query:Only SD:tags =~ \"BTRSS\" and ( title =~ \"hdtv|x264|web\" )" "BTRSS"
 "query:MUTT related news:(unread = \"yes\") and (tags # \"mutt\" or content =~ \"mutt\")"
 "query:NEWSBOAT related news:(unread = \"yes\") and (tags # \"newsboat\" or content =~ \"newsboat\")"
-"query:All Articles Linux-Subreddit:tags # \"Linux-Subreddit\"" "Linux-Subreddit"
+"query:CALCURSE related news:(unread = \"yes\") and (tags # \"calcurse\" or content =~ \"calcurse\")"
+
+"========== ALL ARTICLES ABOUT: ===============================================
+"query:LINUX SUBREDDIT All Articles:tags # \"linux_subreddit\"" "linux_subreddit"
+"query:VIDEO LINUX All Articles:tags # \"video_linux\"" "video_linux"
 # }}}
 
-# PEOPLE
-https://lukesmith.xyz/rss.xml            "~LUKE SMITH: blog"
-https://notrelated.xyz/rss               "~LUKE SMITH: podcast"
-https://landchad.net/rss.xml             "~LUKE SMITH: tutorials about creating and managing websites"
+"========== PEOPLE ============================================================
+"query:LUKE SMITH All Articles:tags # \"luke_smith\"" "luke_smith"
+https://lukesmith.xyz/rss.xml           "!" "luke_smith" "~LUKE SMITH: blog"
+https://notrelated.xyz/rss              "!" "luke_smith" "~LUKE SMITH: podcast"
+https://landchad.net/rss.xml            "!" "luke_smith" "~LUKE SMITH: tutorials about creating and managing websites"
 https://sunknudsen.com/feeds/vlog.xml    "~SUN KNUDSEN: privacy guides episodes"
 https://coreyms.com/feed/                "~CORE SCHAFER: Development, Design, DIY, and more"
 https://www.ezeelinux.com/feed/          "~JOE COLLINS: Making Linux Easy For You!"
 https://share.tube/feeds/videos.xml?accountId=108 "~CHRIS WERE: Welcome to Chris Were's website"
 https://gjenkinsedu.com/index.xml        "~GERRY JENKINS: GJenkins Computer Education"
 https://www.learnlinux.tv/feed/          "~Learn Linux TV: Tutorials, distribution reviews, complete guides..."
+https://alexgyver.ru/feed/               "~AlexGyver: Arduino"
 
-# PEERTUBE
+"========== STUDY =============================================================
+"query:MIPT All Articles:tags # \"mipt\"" "mipt"
+"query:MATHEMATICS All Articles:tags # \"mathematics\"" "mathematics"
+
+"========== PEERTUBE ==========================================================
 https://videos.lukesmith.xyz/feeds/videos.xml?accountId=3  "~PEERTUBE: Luke Smith"
 
-# YOUTUBE
-https://www.youtube.com/feeds/videos.xml?channel_id=UC2eYFnH61tmytImy1mTYvhA "~YOUTUBE: Luke Smith"
-https://www.youtube.com/feeds/videos.xml?channel_id=UCVls1GmFKf6WlTraIb_IaJg "~YOUTUBE: Derek Taylor"
-https://www.youtube.com/feeds/videos.xml?channel_id=UCfp-lNJy4QkIGnaEE6NtDSg "~YOUTUBE: Terminalforlife"
+"========== YOUTUBE ===========================================================
+# CHANNELS
+https://www.youtube.com/feeds/videos.xml?channel_id=UC2eYFnH61tmytImy1mTYvhA "!" "luke_smith" "video_linux" "~YOUTUBE: Luke Smith"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCVls1GmFKf6WlTraIb_IaJg "video_linux" "~YOUTUBE: Derek Taylor"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCfp-lNJy4QkIGnaEE6NtDSg "video_linux" "~YOUTUBE: Terminalforlife"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCkHN7h7CFeYL6Y1N5JcEZug "~YOUTUBE: Sun Knudsen"
 https://www.youtube.com/feeds/videos.xml?channel_id=UC7YOGHUfC1Tb6E4pudI9STA "~YOUTUBE: Mental Outlaw"
 https://www.youtube.com/feeds/videos.xml?channel_id=UCjr2bPAyPV7t35MvcgT3W8Q "~YOUTUBE: The Hated One"
-https://www.youtube.com/feeds/videos.xml?channel_id=UCkf4VIqu3Acnfzuk3kRIFwA "~YOUTUBE: gotbletu"
-https://www.youtube.com/feeds/videos.xml?channel_id=UCld68syR8Wi-GY_n4CaoJGA "~YOUTUBE: Brodie Robertson"
-https://www.youtube.com/feeds/videos.xml?channel_id=UC8ENHE5xdFSwx71u3fDH5Xw "~YOUTUBE: ThePrimeagen"
-https://www.youtube.com/feeds/videos.xml?channel_id=UCxQKHvKbmSzGMvUrVtJYnUA "~YOUTUBE: LearnLinuxTV"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCcbyyicnwrRd4arK9709feg "video_linux" "~YOUTUBE: Computer and Network Security"
+https://www.youtube.com/feeds/videos.xml?channel_id=UC31AYWcB8IOaott-0WyDtMA "video_linux" "~YOUTUBE: Linux Administration"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCWEWHRkzeelGR_oN-wcAJyw "~YOUTUBE: Kiberded"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCkf4VIqu3Acnfzuk3kRIFwA "video_linux" "~YOUTUBE: gotbletu"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCld68syR8Wi-GY_n4CaoJGA "video_linux" "~YOUTUBE: Brodie Robertson"
+https://www.youtube.com/feeds/videos.xml?channel_id=UC8ENHE5xdFSwx71u3fDH5Xw "video_linux" "~YOUTUBE: ThePrimeagen"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCxQKHvKbmSzGMvUrVtJYnUA "video_linux" "~YOUTUBE: LearnLinuxTV"
 https://www.youtube.com/feeds/videos.xml?channel_id=UC7c3Kb6jYCRj4JOHHZTxKsQ "~YOUTUBE: Github"
 https://www.youtube.com/feeds/videos.xml?channel_id=UCP7RrmoueENv9TZts3HXXtw "~YOUTUBE: Github Training"
-https://www.youtube.com/feeds/videos.xml?channel_id=UC8butISFwT-Wl7EV0hUK0BQ "~YOUTUBE: Freecodecamp"
-https://www.youtube.com/feeds/videos.xml?channel_id=UC-sAMvDe7gTmBbub-rWljZg "~YOUTUBE: ADV-IT"
-https://www.youtube.com/feeds/videos.xml?channel_id=UCCezIgC97PvUuR4_gbFUs5g "~YOUTUBE: Core Schafer"
-https://www.youtube.com/feeds/videos.xml?channel_id=UCTfabOKD7Yty6sDF4POBVqA "~YOUTUBE: Joe Collins"
+https://www.youtube.com/feeds/videos.xml?channel_id=UC8butISFwT-Wl7EV0hUK0BQ "video_linux" "~YOUTUBE: Freecodecamp"
+https://www.youtube.com/feeds/videos.xml?channel_id=UC-sAMvDe7gTmBbub-rWljZg "video_linux" "~YOUTUBE: ADV-IT"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCCezIgC97PvUuR4_gbFUs5g "video_linux" "~YOUTUBE: Core Schafer"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCTfabOKD7Yty6sDF4POBVqA "video_linux" "~YOUTUBE: Joe Collins"
 https://www.youtube.com/feeds/videos.xml?channel_id=UC8ENHE5xdFSwx71u3fDH5Xw "~YOUTUBE: ThePrimeagen"
-https://www.youtube.com/feeds/videos.xml?channel_id=UC4JX40jDee_tINbkjycV4Sg "~YOUTUBE: Tech With Tim"
-https://www.youtube.com/feeds/videos.xml?channel_id=UCQxhrxXQTUXJhQcM6yeh06A "~YOUTUBE: Frolov"
-https://www.youtube.com/feeds/videos.xml?channel_id=UCkHN7h7CFeYL6Y1N5JcEZug "~YOUTUBE: Sun Knudsen"
-https://www.youtube.com/feeds/videos.xml?channel_id=UChm14xhAJjlmGtIBotr7jtg "~YOUTUBE: Gerry Jenkins"
-https://www.youtube.com/feeds/videos.xml?channel_id=UCfzlCWGWYyIQ0aLC5w48gBQ "~YOUTUBE: Sentdex"
-https://www.youtube.com/feeds/videos.xml?channel_id=UCRjTEkDLPREZNlREZMlotMQ "~YOUTUBE: Al Sweigart"
-https://www.youtube.com/feeds/videos.xml?channel_id=UCS97tchJDq17Qms3cux8wcA "~YOUTUBE: chris@machine"
-https://www.youtube.com/feeds/videos.xml?channel_id=UCcbyyicnwrRd4arK9709feg "~YOUTUBE: Computer and Network Security"
-https://www.youtube.com/feeds/videos.xml?channel_id=UC31AYWcB8IOaott-0WyDtMA "~YOUTUBE: Linux Administration"
+https://www.youtube.com/feeds/videos.xml?channel_id=UChm14xhAJjlmGtIBotr7jtg "video_linux" "~YOUTUBE: Gerry Jenkins"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCfzlCWGWYyIQ0aLC5w48gBQ "video_linux" "~YOUTUBE: Sentdex"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCS97tchJDq17Qms3cux8wcA "video_linux" "~YOUTUBE: chris@machine"
 https://www.youtube.com/feeds/videos.xml?channel_id=UC5mnBodB73bR88fLXHSfzYA "~YOUTUBE: Eddie Jaoude"
-https://www.youtube.com/feeds/videos.xml?channel_id=UCX_WM2O-X96URC5n66G-hvw "~YOUTUBE: EF - Linux Made Simple"
-https://www.youtube.com/feeds/videos.xml?channel_id=UCJdmdUp5BrsWsYVQUylCMLg "~YOUTUBE: Erik Dubois"
-https://www.youtube.com/feeds/videos.xml?channel_id=UChE2sc5N7PfdV-yN2_ctvtg "~YOUTUBE: GetAClass - Просто математика"
-https://www.youtube.com/feeds/videos.xml?channel_id=UCeISxWd5UTxH6-uXp3ev-5w "~YOUTUBE: dUdVstud"
-https://www.youtube.com/feeds/videos.xml?channel_id=UCLDpIKDTFBSwIYtAG0Wpibg "~YOUTUBE: Valery Volkov"
-https://www.youtube.com/feeds/videos.xml?channel_id=UCdxesVp6Fs7wLpnp1XKkvZg "~YOUTUBE: Лекторий ФПМИ"
-https://www.youtube.com/feeds/videos.xml?channel_id=UCWk8OxsylgmZ_VgY7jC9pjQ "~YOUTUBE: Маткульт-привет!"
-https://www.youtube.com/feeds/videos.xml?channel_id=UCQfwKTJdCmiA6cXAY0PNRJw "~YOUTUBE: TX"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCX_WM2O-X96URC5n66G-hvw "video_linux" "~YOUTUBE: EF - Linux Made Simple"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCJdmdUp5BrsWsYVQUylCMLg "video_linux" "~YOUTUBE: Erik Dubois"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCRjTEkDLPREZNlREZMlotMQ "python" "~YOUTUBE: Al Sweigart"
+https://www.youtube.com/feeds/videos.xml?channel_id=UC4JX40jDee_tINbkjycV4Sg "python" "~YOUTUBE: Tech With Tim"
+https://www.youtube.com/feeds/videos.xml?channel_id=UChE2sc5N7PfdV-yN2_ctvtg "!" "mathematics" "~YOUTUBE: GetAClass - Просто математика"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCeISxWd5UTxH6-uXp3ev-5w "!" "mathematics" "~YOUTUBE: dUdVstud"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCLDpIKDTFBSwIYtAG0Wpibg "!" "mathematics" "~YOUTUBE: Valery Volkov"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCWk8OxsylgmZ_VgY7jC9pjQ "!" "mathematics" "~YOUTUBE: Маткульт-привет!"
+https://www.youtube.com/feeds/videos.xml?channel_id=UClTIrwj5npeOaBjH6_AkKyA "!" "mathematics" "~YOUTUBE: Математика — просто"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCdxesVp6Fs7wLpnp1XKkvZg "!" "mipt" "~YOUTUBE: Лекторий ФПМИ"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCQfwKTJdCmiA6cXAY0PNRJw "!" "mipt" "~YOUTUBE: TX"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCQxhrxXQTUXJhQcM6yeh06A "boxing" "~YOUTUBE: Alexey Frolov"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCrud5r6A0O_LjSU-qc-cMjA "boxing" "~YOUTUBE: Yury Kabanov"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCw5HrfDsTronMdP12rRIdPA "boxing" "~YOUTUBE: Sergey Raab"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCTDud3yntIu70RUAhlxEOnw "boxing" "~YOUTUBE: Pavel Pecherskih"
+# PLAYLISTS
+https://www.youtube.com/feeds/videos.xml?playlist_id=PLvtdO4THR9be5rX-Vk-A3RGvg63Qq8gV2 "!" "mathematics" "~YOUTUBE: QWERTY Реальная математика"
 
-# GITLAB
+"========== GITLAB ============================================================
 https://gitlab.com/dwt1.atom "~GITLAB: Derek Taylor"
 
-# GITHUB
+"========== GITHUB ============================================================
 https://github.com/LukeSmithxyz.atom "~GITHUB: Luke Smith"
 
-# FEEDS
+"========== LEARN TO CODE =====================================================
 https://www.freecodecamp.org/news/rss/ "~Free Code Camp: Learn to code"
 https://stackoverflow.com/feeds "~Stackoverflow: Stackoverflow"
 
-# -------- Linux-Subreddit {{{
-# ------------------------------------------------------
-
-https://www.reddit.com/r/termux/.rss "Linux-Subreddit"
-https://www.reddit.com/r/w3m/.rss "Linux-Subreddit"
-https://www.reddit.com/r/clistuff/.rss "Linux-Subreddit"
-https://www.reddit.com/r/linux/.rss "Linux-Subreddit"
-https://www.reddit.com/r/commandline/.rss "Linux-Subreddit"
-https://www.reddit.com/r/unixporn/.rss "Linux-Subreddit"
-https://www.reddit.com/r/UsabilityPorn/.rss "Linux-Subreddit"
-https://www.reddit.com/r/pkgoftheday/.rss "Linux-Subreddit"
-https://www.reddit.com/r/gnu/.rss "Linux-Subreddit"
-https://www.reddit.com/r/archlinux/.rss "Linux-Subreddit"
-https://www.reddit.com/r/linux_devices/.rss "Linux-Subreddit"
-https://www.reddit.com/r/UnixProTips/.rss "Linux-Subreddit"
-https://www.reddit.com/r/zsh/.rss "Linux-Subreddit"
-https://www.reddit.com/r/neovim/.rss "Linux-Subreddit"
-https://www.reddit.com/r/tmux/.rss "Linux-Subreddit"
-https://www.reddit.com/r/bash/.rss "Linux-Subreddit"
-https://www.reddit.com/r/vim_magic/.rss "Linux-Subreddit"
-https://www.reddit.com/r/vim/.rss "Linux-Subreddit"
-https://www.reddit.com/r/vimplugins/.rss "Linux-Subreddit"
-https://www.reddit.com/r/linuxprojects/.rss "Linux-Subreddit"
-https://www.reddit.com/r/ScriptSwap/.rss "Linux-Subreddit"
-https://www.reddit.com/r/usefulscripts/.rss "Linux-Subreddit"
-https://www.reddit.com/r/i3wm/.rss "Linux-Subreddit"
-https://www.reddit.com/r/debian/.rss "Linux-Subreddit"
-https://www.reddit.com/r/opensource/.rss "Linux-Subreddit"
-https://www.reddit.com/r/coolgithubprojects/.rss "Linux-Subreddit"
-https://www.reddit.com/r/selfhosted/.rss "Linux-Subreddit"
-https://www.reddit.com/r/archlinux/new.rss   "Linux-Subreddit"
-
+# -------- software that sucks less {{{
+#
 # }}}
 
-# TWITTER (examples for nitter feeds)
+# -------- linux_subreddit {{{
+# You can hide feeds by adding the “!” tag to a feed. This will make the
+# feed disappear from the visible list of feeds on Newsboat.
+# ------------------------------------------------------
+https://www.reddit.com/r/termux/.rss "!" "linux_subreddit"
+https://www.reddit.com/r/w3m/.rss "!" "linux_subreddit"
+https://www.reddit.com/r/clistuff/.rss "!" "linux_subreddit"
+https://www.reddit.com/r/linux/.rss "!" "linux_subreddit"
+https://www.reddit.com/r/commandline/.rss "!" "linux_subreddit"
+https://www.reddit.com/r/unixporn/.rss "!" "linux_subreddit"
+https://www.reddit.com/r/UsabilityPorn/.rss "!" "linux_subreddit"
+https://www.reddit.com/r/pkgoftheday/.rss "!" "linux_subreddit"
+https://www.reddit.com/r/gnu/.rss "!" "linux_subreddit"
+https://www.reddit.com/r/archlinux/.rss "!" "linux_subreddit"
+https://www.reddit.com/r/linux_devices/.rss "!" "linux_subreddit"
+https://www.reddit.com/r/UnixProTips/.rss "!" "linux_subreddit"
+https://www.reddit.com/r/zsh/.rss "!" "linux_subreddit"
+https://www.reddit.com/r/neovim/.rss "!" "linux_subreddit"
+https://www.reddit.com/r/tmux/.rss "!" "linux_subreddit"
+https://www.reddit.com/r/bash/.rss "!" "linux_subreddit"
+https://www.reddit.com/r/vim_magic/.rss "!" "linux_subreddit"
+https://www.reddit.com/r/vim/.rss "!" "linux_subreddit"
+https://www.reddit.com/r/vimplugins/.rss "!" "linux_subreddit"
+https://www.reddit.com/r/linuxprojects/.rss "!" "linux_subreddit"
+https://www.reddit.com/r/ScriptSwap/.rss "!" "linux_subreddit"
+https://www.reddit.com/r/usefulscripts/.rss "!" "linux_subreddit"
+https://www.reddit.com/r/i3wm/.rss "!" "linux_subreddit"
+https://www.reddit.com/r/debian/.rss "!" "linux_subreddit"
+https://www.reddit.com/r/opensource/.rss "!" "linux_subreddit"
+https://www.reddit.com/r/coolgithubprojects/.rss "!" "linux_subreddit"
+https://www.reddit.com/r/selfhosted/.rss "!" "linux_subreddit"
+https://www.reddit.com/r/archlinux/new.rss   "!" "linux_subreddit"
+# }}}
+
+"========== TWITTER (examples for nitter feeds) ===============================
 https://nitter.net/hacktoberfest/rss   "~TWITTER: Hacktoberfest"
 https://nitter.net/GitHubGameOff/rss   "~TWITTER: GitHubGameOff"
 https://nitter.net/githubtraining/rss  "~TWITTER: githubtraining"
 https://nitter.net/github/rss          "~TWITTER: github"
 https://nitter.net/GitHubEducation/rss "~TWITTER: GitHubEducation"
-#https://nitter.net/TwilioQuest/rss     "~TWITTER: TwilioQuest"
-#https://nitter.net/StackOverflow/rss   "~TWITTER: StackOverflow"
-#https://nitter.net/JetBrains_Edu/rss   "~TWITTER: JetBrains Edu"
-#https://nitter.net/pycharm/rss         "~TWITTER: pycharm"
+https://nitter.net/TwilioQuest/rss     "~TWITTER: TwilioQuest"
+https://nitter.net/StackOverflow/rss   "~TWITTER: StackOverflow"
+https://nitter.net/JetBrains_Edu/rss   "~TWITTER: JetBrains Edu"
+https://nitter.net/pycharm/rss         "~TWITTER: pycharm"
+
+"========== THE END ===========================================================
