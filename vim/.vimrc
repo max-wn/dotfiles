@@ -27,7 +27,7 @@ let g:vimtex_view_general_viewer = 'evince'
 " see ':help vimtex-compiler'.
 "let g:vimtex_compiler_method = 'latexrun'
 " Most VimTeX mappings rely on localleader and this can be changed with the
-" following line. The default is usually fine and is the symbol "\".
+" following line. The default is usually fine and is the symbol \.
 let maplocalleader = ","
 " }}}
 
@@ -52,16 +52,21 @@ nmap <C-t> <Plug>VimwikiToggleListItem
 " }}}
 
 " ============================= PLUGINS
+" I use VimPlug (https://github.com/junegunn/vim-plug) {{{
+" to install it execute in terminal:
+"  curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+"    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 call plug#begin('~/.vim/plugged')
 
 Plug 'mbbill/undotree'
 Plug 'gruvbox-community/gruvbox'
 Plug 'tpope/vim-commentary'
 Plug 'vimwiki/vimwiki'
-"Plug 'tools-life/taskwiki'
+Plug 'tools-life/taskwiki'
 Plug 'lervag/vimtex'
 
 call plug#end()
+" }}}
 
 " ============================= GRUVBOX COLOR SCHEME
 " {{{
@@ -129,7 +134,7 @@ augroup END
     set signcolumn=yes
     set cmdheight=2            " Give more space for displaying messages.
     set updatetime=50          " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable delays and poor user experience.
-    set shortmess+=c           " Do not pass messages to '|ins-completion-menu|'
+    set shortmess+=c           " Do not pass messages to '\|ins-completion-menu\|'
     set colorcolumn=80
     highlight ColorColumn ctermbg=0 guibg=lightgrey
 " }}}
@@ -154,8 +159,8 @@ augroup END
 
 " ============================= ALACRITTY VIM SYNTAX HIGHLITING FIX
 " {{{
-let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-let &t_8b = "\<Esc>[48:2;%lu;%lu;%lum"
+"let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+"let &t_8b = "\<Esc>[48:2;%lu;%lu;%lum"
 " }}}
 
 " =============================================================================
