@@ -12,7 +12,7 @@ export EDITOR="vim"
 set -o vi
 
 # enable colors:
-autoload -U colors && colors  # Load colors
+#autoload -U colors && colors  # Load colors
 
 # prompt
 PS1='\[\033[38;5;6m\][\t \u@\h \W] \\$ \[$(tput sgr0)\]'
