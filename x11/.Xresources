@@ -1,7 +1,6 @@
-!============================================================================
-! To use it, copy it to: ~/.Xresources
-! Documentation: https://wiki.archlinux.org/index.php/Xterm
-!============================================================================
+! -----------------------------------------------------------------------------
+! Xresources config file
+! -----------------------------------------------------------------------------
 
 Xft.dpi: 96
 Xft.antialias: true
@@ -13,8 +12,8 @@ Xft.lcdfilter: lcdfilter
 
 XTerm*renderFont: true
 XTerm*faceName: xft:JetBrains Mono, \
-                xft:JoyPixels:size=12, \
-                xft:Monospace:style=Medium:size=12
+            xft:JoyPixels:size=12, \
+            xft:Monospace:style=Medium:size=12   
 XTerm*faceSize: 11
 XTerm*utf8: 2
 XTerm*locale: true
@@ -39,46 +38,6 @@ XTerm*savelines: 16384
 
 ! double-click to select whole URLs :D
 XTerm*charClass: 33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
-
-/* ! COLORS */
-/* ! COLOR TABLE FOR INFO */
-/* name   dark light */
-/* black  0    8     */
-/* red    1    9     */
-/* green  2    10    */
-/* yellow 3    11    */
-/* blue   4    12    */
-/* purple 5    13    */
-/* cyan   6    14    */
-/* white  7    15    */
-
-/* !------------------------------------------------------------------------ */
-/* ! INITIAL SCHEME */
-/* !------------------------------------------------------------------------ */
-/* ! black */
-/* *.color0:       #000000 */
-/* *.color8:       #434758 */
-/* ! red */
-/* *.color1:       #800000 */
-/* *.color9:       #ff0000 */
-/* ! green */
-/* *.color2:       #008000 */
-/* *.color10:      #00ff00 */
-/* ! yellow */
-/* *.color3:       #ffd700 */
-/* *.color11:      #ffff00 */
-/* ! blue */
-/* *.color4:       #000080 */
-/* *.color12:      #0000ff */
-/* ! magenta */
-/* *.color5:       #c792ea */
-/* *.color13:      #e1acff */
-/* ! cyan */
-/* *.color6:       #89ddff */
-/* *.color14:      #a3f7ff */
-/* ! white */
-/* *.color7:       #d0d0d0 */
-/* *.color15:      #ffffff */
 
 ! -----------------------------------------------------------------------------
 ! File: gruvbox-dark.xresources
@@ -116,53 +75,4 @@ XTerm*charClass: 33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
 ! LightGrey + White
 *color7:  #a89984
 *color15: #ebdbb2
-
-! -----------------------------------------------------------------------------
-! Copyright (c) 2016-present Arctic Ice Studio <development@arcticicestudio.com>
-! Copyright (c) 2016-present Sven Greb <code@svengreb.de>
-
-! Project:    Nord XResources
-! Version:    0.1.0
-! Repository: https://github.com/arcticicestudio/nord-xresources
-! License:    MIT
-! -----------------------------------------------------------------------------
-/* #define nord0 #2E3440 */
-/* #define nord1 #3B4252 */
-/* #define nord2 #434C5E */
-/* #define nord3 #4C566A */
-/* #define nord4 #D8DEE9 */
-/* #define nord5 #E5E9F0 */
-/* #define nord6 #ECEFF4 */
-/* #define nord7 #8FBCBB */
-/* #define nord8 #88C0D0 */
-/* #define nord9 #81A1C1 */
-/* #define nord10 #5E81AC */
-/* #define nord11 #BF616A */
-/* #define nord12 #D08770 */
-/* #define nord13 #EBCB8B */
-/* #define nord14 #A3BE8C */
-/* #define nord15 #B48EAD */
-
-/* *.foreground:   nord4 */
-/* *.background:   nord0 */
-/* *.cursorColor:  nord4 */
-/* *fading: 35 */
-/* *fadeColor: nord3 */
-
-/* *.color0: nord1 */
-/* *.color1: nord11 */
-/* *.color2: nord14 */
-/* *.color3: nord13 */
-/* *.color4: nord9 */
-/* *.color5: nord15 */
-/* *.color6: nord8 */
-/* *.color7: nord5 */
-/* *.color8: nord3 */
-/* *.color9: nord11 */
-/* *.color10: nord14 */
-/* *.color11: nord13 */
-/* *.color12: nord9 */
-/* *.color13: nord15 */
-/* *.color14: nord7 */
-/* *.color15: nord6 */
 
