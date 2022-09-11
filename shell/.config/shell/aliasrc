@@ -17,8 +17,18 @@ alias \
     rm="rm -i" \
     cp="cp -i" \
     mv="mv -i"
-# run mutt from attachments directory for save attachments in it
-alias mutt='cd ~/attachments && mutt'
-# rum moc in XDG directory
-alias mocp='mocp -M "$XDG_CONFIG_HOME"/moc'
 
+# run mutt from attachments directory for save attachments in it
+alias mutt="cd ~/attachments && mutt"
+
+# rum moc in XDG directory
+alias mocp="mocp -M \"$XDG_CONFIG_HOME\"/moc"
+
+# sdcv
+alias geru="sdcv -uc \"Universal (Ge-Ru)\""
+
+# alacritty
+alias nt="alacritty msg create-window"  # creates new tab
+
+# vimwiki
+alias vw="vim -c VimwikiIndex"  # open vimwiki from terminal
