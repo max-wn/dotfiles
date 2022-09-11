@@ -13,13 +13,18 @@ export PATH="/usr/local/sbin:$PATH"
 export BACKUP_VOLUME_PATH="/Volumes/Samsung/backup"
 
 # ~/ Clean-up:
+## general
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_STATE_HOME="$HOME/.local/state"
 export XDG_RUNTIME_DIR="/run/user/$UID"
-export LESSHISTFILE="$XDG_CACHE_HOME"/less/history
-export ZDOTDIR="$HOME"/.config/zsh
+## programs
+export LESSHISTFILE="$XDG_CACHE_HOME"/less/history  # less
+export ZDOTDIR="$HOME"/.config/zsh                  # zshrc
+export TERMINFO="$XDG_DATA_HOME"/terminfo                           # ncurses
+export TERMINFO_DIRS="$XDG_DATA_HOME"/terminfo:/usr/share/terminfo  # ncurses
+export STARDICT_DATA_DIR=$XDG_DATA_HOME             # sdcv
 
 # for gpg
 export GPG_TTY=$(tty)
