@@ -47,8 +47,6 @@ let g:vimwiki_global_ext = 0
 let g:vimwiki_markdown_link_ext = 1
 " Toggle checkbox of a list item on/off (remap to <Ctrl-t>.
 nmap <C-t> <Plug>VimwikiToggleListItem
-"let g:taskwiki_markup_syntax = 'markdown'  " ?
-"let g:markdown_folding = 1  " ?
 " }}}
 
 " ============================= PLUGINS
@@ -62,7 +60,6 @@ Plug 'mbbill/undotree'
 Plug 'gruvbox-community/gruvbox'
 Plug 'tpope/vim-commentary'
 Plug 'vimwiki/vimwiki'
-Plug 'tools-life/taskwiki'
 Plug 'lervag/vimtex'
 
 call plug#end()
