@@ -1,5 +1,5 @@
 # enable editor
-export EDITOR="vim"
+export EDITOR="nvim"
 
 # enable vi mode
 set -o vi
@@ -15,3 +15,6 @@ PROMPT="%F{green}%*%f%F{green} %f%F{green}%n%f%F{green}@%f%F{green}%m%f%F{green}
 
 # for my aliases stored in aliasrc
 [ -f "$HOME/.config/shell/aliasrc" ] && source "$HOME/.config/shell/aliasrc"
+
+# autostart programms
+#khal calendar

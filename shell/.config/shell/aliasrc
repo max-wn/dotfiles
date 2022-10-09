@@ -12,8 +12,8 @@ alias \
 # zsh and bash aliases
 # misc
 alias \
-	grep="grep --color=auto" \
-	diff="diff -rys" \
+    grep="grep --color=auto" \
+    diff="diff -rys" \
     rm="rm -i" \
     cp="cp -i" \
     mv="mv -i"
@@ -31,4 +31,10 @@ alias geru="sdcv -uc \"Universal (Ge-Ru)\""
 alias nt="alacritty msg create-window"  # creates new tab
 
 # vimwiki
-alias vw="vim -c VimwikiIndex"  # open vimwiki from terminal
+alias vw="nvim -c VimwikiIndex"  # open vimwiki from terminal
+
+## xdg-ninja advise. works not properly and I do not use it.
+# alias mbsync to use a custom configuration file location
+#alias mbsync=mbsync -c "$XDG_CONFIG_HOME"/isync/mbsyncrc
+# Alias abook to use custom locations for configuration and data:
+#alias abook="abook --config \"$XDG_CONFIG_HOME\"/abook/abookrc --datafile \"$XDG_DATA_HOME\"/abook/addressbook"
