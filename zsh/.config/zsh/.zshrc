@@ -1,3 +1,6 @@
+#
+#
+#
 # enable editor
 export EDITOR="nvim"
 
@@ -17,4 +20,5 @@ PROMPT="%F{green}%*%f%F{green} %f%F{green}%n%f%F{green}@%f%F{green}%m%f%F{green}
 [ -f "$HOME/.config/shell/aliasrc" ] && source "$HOME/.config/shell/aliasrc"
 
 # autostart programms
+#neofetch
 #khal calendar
