@@ -1,10 +1,15 @@
 #!/bin/bash
 
+# ~/.bash_profile
 # Profile file. Runs on login. Environmental variables are set here.
+
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 
 # enable browser
 export BROWSER="firefox"
+
+# enable editor
+export EDITOR="nvim"
 
 # dir for scripts
 export PATH="$HOME/bin":$PATH
@@ -21,5 +26,5 @@ export XDG_STATE_HOME="$HOME/.local/state"
 ## programs
 export LESSHISTFILE="$XDG_CACHE_HOME"/less/history  # less
 export HISTFILE="${XDG_STATE_HOME}"/bash/history    # bash history
-export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java  # openjdk
+#export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java  # openjdk
 export TEXMFVAR="$XDG_CACHE_HOME"/texlive/texmf-var  # texmf
