@@ -12,6 +12,7 @@ moc/.config/moc/pid
 # for mc (midnight commander)
 mc/.config/mc/ini
 mc/.config/mc/panels.ini
+mc/.config/mc/mc.ext.ini
 
 # for python
 __pycache__/
@@ -26,3 +27,5 @@ mpd/.config/mpd/pid
 # for ncmpcpp
 ncmpcpp/.config/ncmpcpp/error.log
 
+# for task
+task/.config/task/hooks/

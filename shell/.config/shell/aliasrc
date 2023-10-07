@@ -1,28 +1,27 @@
 #!/bin/sh
 
 # zsh aliases with colorized commands when possible.
-alias \
-	ll="ls -lahG"
+#alias \
+#	ll="ls -lahG"
 
 # bash aliases with colorized commands when possible.
 alias \
-	lb="ls -lah --color=auto" \
-	diffb="diff -rys --color=auto"
+	ll="ls -lah --group-directories-first --color=auto" \
+	diff="diff -rys --color=auto"
 
 # zsh and bash aliases
 # misc
 alias \
     grep="grep --color=auto" \
-    diff="diff -rys" \
     rm="rm -i" \
     cp="cp -i" \
     mv="mv -i"
 
 # run mutt from attachments directory for save attachments in it
-alias mutt="cd ~/attachments && mutt"
+#alias mutt="cd ~/attachments && mutt"
 
 # rum moc in XDG directory
-alias mocp="mocp -M \"$XDG_CONFIG_HOME\"/moc"
+#alias mocp="mocp -M \"$XDG_CONFIG_HOME\"/moc"
 
 # sdcv
 alias geru="sdcv -uc \"Universal (Ge-Ru)\""
