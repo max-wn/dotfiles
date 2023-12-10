@@ -71,6 +71,7 @@ keys = [
     Key([mod, "shift"], "Return", lazy.layout.toggle_split(),
         desc="Toggle between split and unsplit sides of stack"),
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
+    Key([mod], "f", lazy.spawn('firefox'), desc="Launch FireFox"),
 
     # Toggle between different layouts as defined below
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
@@ -140,11 +141,14 @@ screens = [
                 #widget.TextBox("default config", name="default"),
                 #widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"),
                 #widget.KeyboardLayout(),
+                widget.Wallpaper(directory = '~/BG', label = ' ', random_selection = True),
+                widget.NvidiaSensors(format = '{temp}C', foreground_alert = 'ff6000'),
                 widget.TextBox("BTTR:"),
                 widget.Battery(format = '{char} {percent:2.0%}', unknown_char = '#'),
                 widget.TextBox(text = "PCMN"),
                 widget.CheckUpdates(
-                    update_interval = 1800,
+                    update_interval = 60,
+                    colour_have_updates = '910f0d',
                     distro = "Arch",
                     display_format = 'UPD: {updates}',
                     no_update_string = '#'),
