@@ -20,7 +20,8 @@ Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-commentary'
 Plug 'ap/vim-css-color'
 Plug 'lervag/vimtex'
-Plug 'tools-life/taskwiki'
+Plug 'gruvbox-community/gruvbox'
+"Plug 'tools-life/taskwiki'
 call plug#end()
 
 set title
@@ -164,7 +165,8 @@ nnoremap <leader>h :call ToggleHiddenAll()<CR>
 " if typed fast without the timeout.
 "source ~/.config/nvim/shortcuts.vim
 
-" ===== VimTeX =====
+" ============================ VimTeX
+" {{{
 " This is necessary for VimTeX to load properly. The "indent" is optional.
 " Note that most plugin managers will do this automatically.
 filetype plugin indent on
@@ -192,7 +194,18 @@ let g:vimtex_view_general_options = '--unique file:@pdf\#src:@line@tex'
 " Most VimTeX mappings rely on localleader and this can be changed with the
 " following line. The default is usually fine and is the symbol "\".
 let maplocalleader = ","
+" }}}
 
-" ===== TaskViki =====
+" ============================ VimWiki
+" {{{
 " Toggle checkbox of a list item on/off (remap to <Ctrl-t>.
 map <C-t> <Plug>VimwikiToggleListItem
+" }}}
+
+" ============================= GRUVBOX COLOR SCHEME
+" {{{
+let g:gruvbox_contrast_dark = 'hard'
+colorscheme gruvbox
+set background=dark
+"set termguicolors  " When on, uses |highlight-guifg| and |highlight-guibg| attributes in the terminal (thus using 24-bit color).
+" }}}

@@ -146,6 +146,7 @@ screens = [
                 widget.Volume(),
                 widget.TextBox("PCMN:"),
                 widget.CheckUpdates(
+                    distro='Arch',
                     update_interval=900,
                     no_update_string='#',
                     colour_have_updates = '910f0d',
