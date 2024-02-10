@@ -71,6 +71,10 @@ keys = [
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
+    # Volume
+    Key([], 'XF86AudioLowerVolume', lazy.spawn('pactl set-sink-volume @DEFAULT_SINK@ -5%')),
+    Key([], 'XF86AudioRaiseVolume', lazy.spawn('pactl set-sink-volume @DEFAULT_SINK@ +5%')),
+    Key([], 'XF86AudioMute', lazy.spawn('pactl set-sink-mute @DEFAULT_SINK@ toggle')),
 ]
 
 groups = [Group(i) for i in "123456789"]
@@ -140,17 +144,19 @@ screens = [
                 #widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"),
                 # NB Systray is incompatible with Wayland, consider using StatusNotifier instead
                 #widget.StatusNotifier(),
-                widget.TextBox("SYS:"),
                 widget.Systray(),
                 widget.TextBox("VOL:"),
                 widget.Volume(),
-                widget.TextBox("PCMN:"),
                 widget.CheckUpdates(
-                    distro='Arch',
+                    distro='Arch_checkupdates',
                     update_interval=900,
-                    no_update_string='#',
-                    colour_have_updates = '910f0d',
-                    display_format = 'UPD: {updates}'),
+                    colour_have_updates = '#910f0d',
+                    display_format = 'UPD PCMN: {updates}'),
+                widget.CheckUpdates(
+                    distro='Arch_yay',
+                    update_interval=900,
+                    colour_have_updates = '#910f0d',
+                    display_format = 'UPD YAY: {updates}'),
                 widget.TextBox("BTTR:"),
                 widget.Battery(),
                 widget.TextBox("DATE:"),
