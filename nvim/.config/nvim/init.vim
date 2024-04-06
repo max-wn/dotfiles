@@ -49,12 +49,10 @@ set noshowcmd
 " Perform dot commands over visual blocks:
 	vnoremap . :normal .<CR>
 " Goyo plugin makes text more readable when writing prose:
-	map <leader>f :Goyo \| set bg=light \| set linebreak<CR>
+	map <leader>f :Goyo \| set bg=dark \| set linebreak<CR>
 " Spell-check set to <leader>o, 'o' for 'orthography':
 	map <leader>o :setlocal spell! spelllang=en_us<CR>
-" Splits open at the bottom and right, which is non-retarded, unlike vim
-" defaults. Horizontal splits will automatically be below. Vertical splits
-" will automatically be to the right.
+" Splits open at the bottom and right, which is non-retarded, unlike vim defaults.
 	set splitbelow splitright
 
 " ===== Nerd tree =====
@@ -72,6 +70,14 @@ set noshowcmd
 	nm <leader>i :call ToggleIPA()<CR>
 	imap <leader>i <esc>:call ToggleIPA()<CR>a
 	nm <leader>q :call ToggleProse()<CR>
+
+" vim-airline
+	if !exists('g:airline_symbols')
+  	    let g:airline_symbols = {}
+	endif
+	let g:airline_symbols.colnr = ' C:'
+	let g:airline_symbols.linenr = ' L:'
+	let g:airline_symbols.maxlinenr = '☰ '
 
 " Shortcutting split navigation, saving a keypress:
 	map <C-h> <C-w>h
@@ -113,17 +119,17 @@ set noshowcmd
 	cabbrev w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
 
 " Enable Goyo by default for mutt writing
-	autocmd BufRead,BufNewFile /tmp/neomutt* let g:goyo_width=80
-	autocmd BufRead,BufNewFile /tmp/neomutt* :Goyo | set bg=light
-	autocmd BufRead,BufNewFile /tmp/neomutt* map ZZ :Goyo\|x!<CR>
-	autocmd BufRead,BufNewFile /tmp/neomutt* map ZQ :Goyo\|q!<CR>
+	"autocmd BufRead,BufNewFile /tmp/neomutt* let g:goyo_width=80
+	"autocmd BufRead,BufNewFile /tmp/neomutt* :Goyo | set bg=dark
+	"autocmd BufRead,BufNewFile /tmp/neomutt* map ZZ :Goyo\|x!<CR>
+	"autocmd BufRead,BufNewFile /tmp/neomutt* map ZQ :Goyo\|q!<CR>
 
-" Automatically deletes all trailing whitespace and newlines at end of file on
-" save. & reset cursor position
-	autocmd BufWritePre * let currPos = getpos(".")
+" Automatically deletes all trailing whitespace and newlines at end of file on save. & reset cursor position
+ 	autocmd BufWritePre * let currPos = getpos(".")
 	autocmd BufWritePre * %s/\s\+$//e
 	autocmd BufWritePre * %s/\n\+\%$//e
-	autocmd BufWritePre *.[ch] %s/\%$/\r/e
+  autocmd BufWritePre *.[ch] %s/\%$/\r/e " add trailing newline for ANSI C standard
+  autocmd BufWritePre *neomutt* %s/^--$/-- /e " dash-dash-space signature delimiter in emails
   	autocmd BufWritePre * cal cursor(currPos[1], currPos[2])
 
 " When shortcut files are updated, renew bash and ranger configs with new material:
@@ -133,8 +139,6 @@ set noshowcmd
 	autocmd BufWritePost Xresources,Xdefaults,xresources,xdefaults !xrdb %
 " Recompile dwmblocks on config edit.
 	autocmd BufWritePost ~/.local/src/dwmblocks/config.h !cd ~/.local/src/dwmblocks/; sudo make install && { killall -q dwmblocks;setsid -f dwmblocks }
-" auto source when writing to init.vm alternatively you can run :source $MYVIMRC
-	"autocmd BufWritePost $MYVIMRC source %
 
 " Turns off highlighting on the bits of code that are changed, so the line that is changed is highlighted but the actual text that has changed stands out on the line and is readable.
 if &diff
@@ -163,7 +167,7 @@ nnoremap <leader>h :call ToggleHiddenAll()<CR>
 " Here leader is ";".
 " So ":vs ;cfz" will expand into ":vs /home/<user>/.config/zsh/.zshrc"
 " if typed fast without the timeout.
-"source ~/.config/nvim/shortcuts.vim
+"silent! source ~/.config/nvim/shortcuts.vim
 
 " ============================ VimTeX
 " {{{
