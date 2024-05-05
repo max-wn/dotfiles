@@ -1,17 +1,17 @@
+import = [
+"~/.local/share/alacritty/themes/xterm.toml",
+#"~/.local/share/alacritty/themes/blood_moon.toml",
+]
+
 [env]
 TERM = "alacritty"
 
 [font]
 size = 8.0
-
-[font.bold]
-family = "monospace"
-
-[font.italic]
-family = "monospace"
-
-[font.normal]
-family = "monospace"
+normal = {family = "PT Mono", style = "Regular"}
+bold = {family = "PT Mono", style = "Bold"}
+italic = {family = "PT Mono", style = "Italic"}
+bold_italic = {family = "PT Mono", style = "Bold Italic"}
 
 [scrolling]
 history = 10000

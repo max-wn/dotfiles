@@ -1,4 +1,4 @@
-# [Created by task 2.6.2 8/27/2023 19:12:27]
+# [Created by task 3.0.2 4/28/2024 12:53:15]
 # Taskwarrior program configuration file.
 # For more documentation, see https://taskwarrior.org or try 'man task', 'man task-color',
 # 'man task-sync' or 'man taskrc'
@@ -16,13 +16,12 @@
 
 # Files
 #data.location=/home/maxim/.task
-data.location=$XDG_DATA_HOME/task/
 
 # To use the default location of the XDG directories,
 # move this configuration file from ~/.taskrc to ~/.config/task/taskrc and uncomment below
 
-#data.location=~/.local/share/task
-hooks.location=~/.config/task/hooks
+data.location=~/.local/share/task
+hooks.location=~/.local/share/task/hooks
 
 # Color theme (uncomment one to use)
 #include light-16.theme
@@ -39,5 +38,4 @@ include dark-green-256.theme
 #include solarized-dark-256.theme
 #include solarized-light-256.theme
 #include no-color.theme
-
 regex=on
