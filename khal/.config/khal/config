@@ -7,12 +7,12 @@
 [[family]]
 path = ~/.local/share/khal/calendars/family
 type = calendar
-#color = dark green
 color = dark blue
 
 [[work]]
 path = ~/.local/share/khal/calendars/work
-readonly = True
+type = calendar
+color = dark green
 
 [sqlite]
 path = ~/.local/share/khal/khal.db
@@ -20,19 +20,22 @@ path = ~/.local/share/khal/khal.db
 [locale]
 #local_timezone = Europe/Berlin
 #default_timezone = America/New_York
-
 # If you use certain characters (e.g. commas) in these formats you may need to
 # enclose them in "" to ensure that they are loaded as strings.
 timeformat = %H:%M
-dateformat = %d/%m/%Y
-longdateformat = %d/%m/%Y
-datetimeformat = %d/%m/%Y %H:%M
-longdatetimeformat = %d/%m/%Y %H:%M
+dateformat = %Y-%m-%d
+longdateformat = %Y-%m-%d
+datetimeformat = %Y-%m-%d %H:%M
+longdatetimeformat = %Y-%m-%d %H:%M
 
 firstweekday = 0
-#monthdisplay = firstday
+weeknumbers = off  # "left" or "right"
 
 [default]
 default_calendar = family
-timedelta = 2d               # the default timedelta that list uses
-highlight_event_days = True  # the default is False
+#default_event_alarm = 15m       # Define the default alarm for new events =does not work idk why=
+timedelta = 7d                   # the default timedelta that list uses
+highlight_event_days = True      # the default is False
+
+[view]
+monthdisplay = firstday

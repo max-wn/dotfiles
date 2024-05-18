@@ -32,6 +32,9 @@ alias geru="sdcv -uc \"Universal (Ge-Ru)\""
 # vimwiki
 alias vw="nvim -c VimwikiIndex"  # open vimwiki from terminal
 
+# lf Luke Smith config
+alias lf="lfub"
+
 ## xdg-ninja advise. works not properly and I do not use it.
 # alias mbsync to use a custom configuration file location
 #alias mbsync=mbsync -c "$XDG_CONFIG_HOME"/isync/mbsyncrc

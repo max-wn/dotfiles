@@ -8,10 +8,19 @@ TERM = "alacritty"
 
 [font]
 size = 8.0
+# Below some variants you could use:
 normal = {family = "PT Mono", style = "Regular"}
+#normal = {family = "Inconsolata LGC Nerd Font Mono", style = "Regular"}
+
+# For types below,
+# if the family is not specified,
+# it will fall back to the value specified for the normal font.
 bold = {family = "PT Mono", style = "Bold"}
-italic = {family = "PT Mono", style = "Italic"}
-bold_italic = {family = "PT Mono", style = "Bold Italic"}
+#bold = {family = "Inconsolata LGC Nerd Font Mono", style = "Bold"}
+italic = {family = "PT Sans", style = "Italic"}
+#italic = {family = "Inconsolata LGC Nerd Font Mono", style = "Italic"}
+bold_italic = {family = "PT Sans", style = "Bold Italic"}
+#bold_italic = {family = "Inconsolata LGC Nerd Font Mono", style = "Bold Italic"}
 
 [scrolling]
 history = 10000
