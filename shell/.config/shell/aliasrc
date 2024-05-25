@@ -6,16 +6,16 @@
 
 # bash aliases with colorized commands when possible.
 alias \
-	ll="ls -lah --group-directories-first --color=auto" \
-	diff="diff -rys --color=auto"
+    ll="ls -lah --group-directories-first --color=auto" \
+    diff="diff -rys --color=auto"
 
 # zsh and bash aliases
 # misc
 alias \
     grep="grep --color=auto" \
-    rm="rm -i" \
-    cp="cp -i" \
-    mv="mv -i"
+    rm="rm -Iv" \
+    cp="cp -iv" \
+    mv="mv -iv"
 
 # run mutt from attachments directory for save attachments in it
 #alias mutt="cd ~/attachments && mutt"

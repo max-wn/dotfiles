@@ -6,7 +6,7 @@
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 
 # enable browser
-export BROWSER="firefox"
+export BROWSER="brave"
 
 # enable editor
 export EDITOR="nvim"
@@ -26,5 +26,6 @@ export XDG_STATE_HOME="$HOME/.local/state"
 ## programs
 export LESSHISTFILE="$XDG_CACHE_HOME"/less/history  # less
 export HISTFILE="${XDG_STATE_HOME}"/bash/history    # bash history
+export GNUPGHOME="$XDG_DATA_HOME"/gnupg             # gnupg
 #export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java  # openjdk
 export TEXMFVAR="$XDG_CACHE_HOME"/texlive/texmf-var  # texmf
