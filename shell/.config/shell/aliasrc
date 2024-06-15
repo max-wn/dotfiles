@@ -1,21 +1,27 @@
 #!/bin/sh
 
-# zsh aliases with colorized commands when possible.
+# zsh aliases with colorized commands when possible
 #alias \
 #	ll="ls -lahG"
 
-# bash aliases with colorized commands when possible.
+# bash aliases with colorized commands when possible
 alias \
-    ll="ls -lah --group-directories-first --color=auto" \
-    diff="diff -rys --color=auto"
+	ll="ls -lah --group-directories-first --color=auto" \
+	diff="diff -rys --color=auto"
 
 # zsh and bash aliases
-# misc
+# Verbosity, color and settings that you pretty much just always are going to want.
 alias \
-    grep="grep --color=auto" \
-    rm="rm -Iv" \
-    cp="cp -iv" \
-    mv="mv -iv"
+	grep="grep --color=auto" \
+	rm="rm -Iv" \
+	cp="cp -iv" \
+	mv="mv -iv" \
+	mkdir="mkdir -pv"
+
+# These common commands are just too long! Abbreviate them.
+alias \
+	sdn="shutdown -h now" \
+	z="zathura"
 
 # run mutt from attachments directory for save attachments in it
 #alias mutt="cd ~/attachments && mutt"

@@ -8,10 +8,10 @@ save-path ~/attachments
 external-url-viewer "urlscan"
 
 # externel browser
-browser "firefox %u"
+browser "brave %u"
 macro , open-in-browser
-macro w set browser "lynx"; open-in-browser ; set browser "firefox %u"
-macro m set browser "mpv %u"; open-in-browser ; set browser "firefox %u"
+macro w set browser "lynx"; open-in-browser ; set browser "brave %u"
+macro m set browser "mpv %u"; open-in-browser ; set browser "brave %u"
 
 # # ===== Luke Smith's settings do not work on Mac =====
 # # urlscan
@@ -73,4 +73,3 @@ highlight article "\\[embedded flash: [0-9][0-9]*\\]" green default bold
 highlight article ":.*\\(link\\)$" cyan default
 highlight article ":.*\\(image\\)$" blue default
 highlight article ":.*\\(embedded flash\\)$" magenta default
-

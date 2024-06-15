@@ -31,7 +31,7 @@ python-setuptools
 qtile
 rsync
 stow
-sxiv
+nsxiv
 texlive-lang
 texlive-most
 ttf-jetbrains-mono
