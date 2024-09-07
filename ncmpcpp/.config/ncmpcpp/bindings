@@ -157,15 +157,15 @@
 #def_key "mouse"
 #  mouse_event
 #
-#def_key "up"
-#  scroll_up
+def_key "k"
+  scroll_up
 #
 #def_key "shift-up"
 #  select_item
 #  scroll_up
 #
-#def_key "down"
-#  scroll_down
+def_key "j"
+  scroll_down
 #
 #def_key "shift-down"
 #  select_item
@@ -189,26 +189,26 @@
 #def_key "page_down"
 #  page_down
 #
-#def_key "home"
-#  move_home
+def_key "g"
+  move_home
 #
-#def_key "end"
-#  move_end
+def_key "G"
+  move_end
 #
-#def_key "insert"
-#  select_item
+def_key "insert"
+  select_item
 #
-#def_key "enter"
-#  enter_directory
+def_key "enter"
+  enter_directory
 #
 #def_key "enter"
 #  toggle_output
 #
-#def_key "enter"
-#  run_action
+def_key "enter"
+  run_action
 #
-#def_key "enter"
-#  play_item
+def_key "enter"
+  play_item
 #
 #def_key "space"
 #  add_item_to_playlist
@@ -219,8 +219,8 @@
 #def_key "space"
 #  toggle_visualization_type
 #
-#def_key "delete"
-#  delete_playlist_items
+def_key "x"
+  delete_playlist_items
 #
 #def_key "delete"
 #  delete_browser_items
@@ -228,8 +228,8 @@
 #def_key "delete"
 #  delete_stored_playlist
 #
-#def_key "right"
-#  next_column
+def_key "l"
+  next_column
 #
 #def_key "right"
 #  slave_screen
@@ -240,17 +240,17 @@
 def_key "="
   volume_up
 #
-#def_key "left"
-#  previous_column
+def_key "h"
+  previous_column
 #
 #def_key "left"
 #  master_screen
 #
-#def_key "left"
-#  volume_down
-#
 def_key "-"
   volume_down
+#
+#def_key "-"
+#  volume_down
 #
 #def_key ":"
 #  execute_command
@@ -408,20 +408,20 @@ def_key "9"
 #def_key "?"
 #  find_item_backward
 #
-#def_key "."
-#  next_found_item
+def_key "n"
+  next_found_item
 #
-#def_key ","
-#  previous_found_item
+def_key "N"
+  previous_found_item
 #
 #def_key "w"
 #  toggle_find_mode
 #
-#def_key "e"
-#  edit_song
+def_key "e"
+  edit_song
 #
-#def_key "e"
-#  edit_library_tag
+def_key "e"
+  edit_library_tag
 #
 #def_key "e"
 #  edit_library_album
@@ -429,11 +429,11 @@ def_key "9"
 #def_key "e"
 #  edit_directory_name
 #
-#def_key "e"
-#  edit_playlist_name
+def_key "e"
+  edit_playlist_name
 #
-#def_key "e"
-#  edit_lyrics
+def_key "e"
+  edit_lyrics
 #
 #def_key "i"
 #  show_song_info
@@ -444,8 +444,8 @@ def_key "9"
 #def_key "g"
 #  jump_to_position_in_song
 #
-#def_key "l"
-#  show_lyrics
+def_key "."
+  show_lyrics
 #
 #def_key "ctrl-v"
 #  select_range
@@ -459,14 +459,14 @@ def_key "9"
 #def_key "B"
 #  select_album
 #
-#def_key "a"
-#  add_selected_items
+def_key "a"
+  add_selected_items
 #
-#def_key "c"
-#  clear_playlist
+def_key "c"
+  clear_playlist
 #
-#def_key "c"
-#  clear_main_playlist
+def_key "c"
+  clear_main_playlist
 #
 #def_key "C"
 #  crop_playlist
@@ -492,8 +492,8 @@ def_key "9"
 #def_key "A"
 #  add
 #
-#def_key "S"
-#  save_playlist
+def_key "S"
+  save_playlist
 #
 #def_key "o"
 #  jump_to_playing_song
@@ -548,4 +548,4 @@ def_key "9"
 #
 #def_key "q"
 #  quit
-#
+##

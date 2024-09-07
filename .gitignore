@@ -18,14 +18,20 @@ mc/.config/mc/mc.ext.ini
 __pycache__/
 
 # for mpd
+mpd/.config/mpd/playlists/
 mpd/.config/mpd/database
 mpd/.config/mpd/log
+mpd/.config/mpd/pid
 mpd/.config/mpd/state
 mpd/.config/mpd/sticker.sql
-mpd/.config/mpd/pid
 
 # for ncmpcpp
 ncmpcpp/.config/ncmpcpp/error.log
 
 # for task
 task/.config/task/hooks/
+
+# for nvim
+nvim/.config/nvim/autoload/
+nvim/.config/nvim/plugged/
+nvim/.config/nvim/spell/

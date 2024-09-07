@@ -34,10 +34,10 @@ set noshowmode
 set noruler
 set laststatus=0
 set noshowcmd
+"colorscheme vim
 
 " Some basics:
 	nnoremap c "_c
-	set nocompatible
 	filetype plugin on
 	syntax on                  " Enables syntax highlighing
 	set encoding=utf-8         " The encoding displayed
@@ -51,29 +51,18 @@ set noshowcmd
 " Goyo plugin makes text more readable when writing prose:
 	map <leader>f :Goyo \| set bg=dark \| set linebreak<CR>
 " Spell-check set to <leader>o, 'o' for 'orthography':
-	map <leader>o :setlocal spell! spelllang=en_us<CR>
+	map <leader>o :setlocal spell! spelllang=en_us,ru<CR>
 " Splits open at the bottom and right, which is non-retarded, unlike vim defaults.
 	set splitbelow splitright
 
-" ===== Nerd tree =====
+" Nerd tree
 	map <leader>n :NERDTreeToggle<CR>
 	autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-    if has('nvim')
-        let NERDTreeBookmarksFile = stdpath('data') . '/NERDTreeBookmarks'
-    else
-        let NERDTreeBookmarksFile = '~/.vim' . '/NERDTreeBookmarks'
-    endif
-
-" vimling:
-	nm <leader>d :call ToggleDeadKeys()<CR>
-	imap <leader>d <esc>:call ToggleDeadKeys()<CR>a
-	nm <leader>i :call ToggleIPA()<CR>
-	imap <leader>i <esc>:call ToggleIPA()<CR>a
-	nm <leader>q :call ToggleProse()<CR>
+	let NERDTreeBookmarksFile = stdpath('data') . '/NERDTreeBookmarks'
 
 " vim-airline
 	if !exists('g:airline_symbols')
-  	    let g:airline_symbols = {}
+		let g:airline_symbols = {}
 	endif
 	let g:airline_symbols.colnr = ' C:'
 	let g:airline_symbols.linenr = ' L:'
@@ -119,10 +108,9 @@ set noshowcmd
 	cabbrev w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
 
 " Enable Goyo by default for mutt writing
-	"autocmd BufRead,BufNewFile /tmp/neomutt* let g:goyo_width=80
-	"autocmd BufRead,BufNewFile /tmp/neomutt* :Goyo | set bg=dark
-	"autocmd BufRead,BufNewFile /tmp/neomutt* map ZZ :Goyo\|x!<CR>
-	"autocmd BufRead,BufNewFile /tmp/neomutt* map ZQ :Goyo\|q!<CR>
+	autocmd BufRead,BufNewFile /tmp/neomutt* :Goyo 80 | call feedkeys("jk")
+	autocmd BufRead,BufNewFile /tmp/neomutt* map ZZ :Goyo!\|x!<CR>
+	autocmd BufRead,BufNewFile /tmp/neomutt* map ZQ :Goyo!\|q!<CR>
 
 " Automatically deletes all trailing whitespace and newlines at end of file on save. & reset cursor position
  	autocmd BufWritePre * let currPos = getpos(".")
@@ -169,6 +157,7 @@ nnoremap <leader>h :call ToggleHiddenAll()<CR>
 " if typed fast without the timeout.
 "silent! source ~/.config/nvim/shortcuts.vim
 
+" MY SETTINGS which are different from Luke
 " ============================ VimTeX
 " {{{
 " This is necessary for VimTeX to load properly. The "indent" is optional.
