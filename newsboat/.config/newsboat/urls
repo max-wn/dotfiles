@@ -61,12 +61,14 @@ https://github.com/gillescastel.atom "~GITHUB: Gilles Castel"
 https://github.com/gotbletu.atom "~GITHUB: Gotbletu"
 
 "========== LEARN TO CODE =====================================================
-https://www.freecodecamp.org/news/rss/ "~Free Code Camp: Learn to code"
-#https://stackoverflow.com/feeds "~Stackoverflow: Stackoverflow"
+https://www.freecodecamp.org/news/rss/ "~Free Code Camp"
+https://stackoverflow.com/feeds "~stackoverflow"
+https://www.reddit.com/r/hacktoberfest/.rss "~Hacktoberfest"
 
-# -------- software that sucks less {{{
-#
-# }}}
+"========== LEARN LINUX =======================================================
+https://feeds.feedburner.com/Linux101Hacks "~101 Hacks: Linux"
+https://itsfoss.com/rss/ "~itsfoss Become a Better Linux User"
+https://www.cyberciti.com/feed/ "~nixCraft RSS Feed"
 
 "========== YOUTUBE ===========================================================
 # CHANNELS
@@ -75,7 +77,7 @@ https://www.youtube.com/feeds/videos.xml?channel_id=UCkHN7h7CFeYL6Y1N5JcEZug "!"
 https://www.youtube.com/feeds/videos.xml?channel_id=UC7YOGHUfC1Tb6E4pudI9STA "!" "~YOUTUBE: Mental Outlaw"
 https://www.youtube.com/feeds/videos.xml?channel_id=UCjr2bPAyPV7t35MvcgT3W8Q "!" "~YOUTUBE: The Hated One"
 https://www.youtube.com/feeds/videos.xml?channel_id=UC8ENHE5xdFSwx71u3fDH5Xw "!" "~YOUTUBE: ThePrimeagen"
-https://www.youtube.com/feeds/videos.xml?channel_id=UC5mnBodB73bR88fLXHSfzYA "~YOUTUBE: Eddie Jaoude"
+https://www.youtube.com/feeds/videos.xml?channel_id=UC5mnBodB73bR88fLXHSfzYA "!" "~YOUTUBE: Eddie Jaoude"
 https://www.youtube.com/feeds/videos.xml?channel_id=UC2eYFnH61tmytImy1mTYvhA "!" "luke_smith" "video_linux" "~YOUTUBE: Luke Smith"
 https://www.youtube.com/feeds/videos.xml?channel_id=UCVls1GmFKf6WlTraIb_IaJg "!" "video_linux" "~YOUTUBE: Derek Taylor"
 https://www.youtube.com/feeds/videos.xml?channel_id=UCcbyyicnwrRd4arK9709feg "!" "video_linux" "~YOUTUBE: Computer and Network Security"
@@ -94,9 +96,8 @@ https://www.youtube.com/feeds/videos.xml?channel_id=UCS97tchJDq17Qms3cux8wcA "!"
 https://www.youtube.com/feeds/videos.xml?channel_id=UCX_WM2O-X96URC5n66G-hvw "!" "video_linux" "~YOUTUBE: EF - Linux Made Simple"
 https://www.youtube.com/feeds/videos.xml?channel_id=UCJdmdUp5BrsWsYVQUylCMLg "!" "video_linux" "~YOUTUBE: Erik Dubois"
 https://www.youtube.com/feeds/videos.xml?channel_id=UCRjTEkDLPREZNlREZMlotMQ "python" "~YOUTUBE: Al Sweigart"
-https://www.youtube.com/feeds/videos.xml?channel_id=UC4JX40jDee_tINbkjycV4Sg "python" "~YOUTUBE: Tech With Tim"
+https://www.youtube.com/feeds/videos.xml?channel_id=UC4JX40jDee_tINbkjycV4Sg "!" "python" "~YOUTUBE: Tech With Tim"
 https://www.youtube.com/feeds/videos.xml?channel_id=UChE2sc5N7PfdV-yN2_ctvtg "!" "mathematics" "~YOUTUBE: GetAClass - Просто математика"
-https://www.youtube.com/feeds/videos.xml?channel_id=UCeISxWd5UTxH6-uXp3ev-5w "!" "mathematics" "~YOUTUBE: dUdVstud"
 https://www.youtube.com/feeds/videos.xml?channel_id=UCLDpIKDTFBSwIYtAG0Wpibg "!" "mathematics" "~YOUTUBE: Valery Volkov"
 https://www.youtube.com/feeds/videos.xml?channel_id=UCWk8OxsylgmZ_VgY7jC9pjQ "!" "mathematics" "~YOUTUBE: Маткульт-привет!"
 https://www.youtube.com/feeds/videos.xml?channel_id=UClTIrwj5npeOaBjH6_AkKyA "!" "mathematics" "~YOUTUBE: Математика — просто"
@@ -106,7 +107,6 @@ https://www.youtube.com/feeds/videos.xml?channel_id=UCQxhrxXQTUXJhQcM6yeh06A "bo
 https://www.youtube.com/feeds/videos.xml?channel_id=UCrud5r6A0O_LjSU-qc-cMjA "boxing" "~YOUTUBE: Yury Kabanov"
 https://www.youtube.com/feeds/videos.xml?channel_id=UCw5HrfDsTronMdP12rRIdPA "boxing" "~YOUTUBE: Sergey Raab"
 https://www.youtube.com/feeds/videos.xml?channel_id=UCTDud3yntIu70RUAhlxEOnw "boxing" "~YOUTUBE: Pavel Pecherskih"
-https://www.youtube.com/feeds/videos.xml?channel_id=UCAPR27YUyxmgwm3Wc2WSHLw "foss" "~YOUTUBE: Chris Were - Linux tech open source"
 # PLAYLISTS
 https://www.youtube.com/feeds/videos.xml?playlist_id=PLvtdO4THR9be5rX-Vk-A3RGvg63Qq8gV2 "!" "mathematics" "~YOUTUBE: QWERTY Реальная математика"
 
@@ -136,7 +136,10 @@ https://www.reddit.com/r/usefulscripts/.rss "!" "linux_subreddit"
 https://www.reddit.com/r/opensource/.rss "!" "linux_subreddit"
 https://www.reddit.com/r/coolgithubprojects/.rss "!" "linux_subreddit"
 https://www.reddit.com/r/selfhosted/.rss "!" "linux_subreddit"
-https://www.reddit.com/r/archlinux/new.rss   "!" "linux_subreddit"
+https://www.reddit.com/r/archlinux/new.rss "!" "linux_subreddit"
+https://www.reddit.com/r/LaTeX/.rss "!" "linux_subreddit" "~LaTeX"
 # }}}
-
+# -------- software that sucks less {{{
+#
+# }}}
 "========== THE END ===========================================================

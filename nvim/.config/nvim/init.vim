@@ -22,6 +22,9 @@ Plug 'ap/vim-css-color'
 Plug 'lervag/vimtex'
 Plug 'gruvbox-community/gruvbox'
 "Plug 'tools-life/taskwiki'
+"Plug 'vim-pandoc/vim-pandoc'
+"Plug 'vim-pandoc/vim-pandoc-syntax'
+"Plug 'abeleinin/papyrus'
 call plug#end()
 
 set title
@@ -158,7 +161,8 @@ nnoremap <leader>h :call ToggleHiddenAll()<CR>
 "silent! source ~/.config/nvim/shortcuts.vim
 
 " MY SETTINGS which are different from Luke
-" ============================ VimTeX
+
+" ============================ VIMTEX
 " {{{
 " This is necessary for VimTeX to load properly. The "indent" is optional.
 " Note that most plugin managers will do this automatically.
@@ -189,7 +193,7 @@ let g:vimtex_view_general_options = '--unique file:@pdf\#src:@line@tex'
 let maplocalleader = ","
 " }}}
 
-" ============================ VimWiki
+" ============================ VIMWIKI
 " {{{
 " Toggle checkbox of a list item on/off (remap to <Ctrl-t>.
 map <C-t> <Plug>VimwikiToggleListItem
@@ -202,3 +206,21 @@ colorscheme gruvbox
 set background=dark
 "set termguicolors  " When on, uses |highlight-guifg| and |highlight-guibg| attributes in the terminal (thus using 24-bit color).
 " }}}
+
+" ============================ PAPYRUS
+" {{{
+" Specify a Latex Engine from the supported list above
+"let g:papyrus_latex_engine = 'xelatex'
+
+" Specify any built-in pdf viewing option. It's recommended to use
+" a pdf viewer with automatic updates on save.
+"let g:papyrus_viewer = 'zathura'
+
+" Recommended keybinding for compiling and viewing documents
+" Adding optional formattings is also possible by
+"map <leader>pc :PapyrusCompile<CR>
+"map <leader>pa :PapyrusAutoCompile<CR>
+"map <leader>pv :PapyrusView<CR>
+"map <leader>ps :PapyrusStart<CR>
+" }}}
+" ============================ THE END
