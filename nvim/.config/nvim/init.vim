@@ -25,6 +25,7 @@ Plug 'gruvbox-community/gruvbox'
 "Plug 'vim-pandoc/vim-pandoc'
 "Plug 'vim-pandoc/vim-pandoc-syntax'
 "Plug 'abeleinin/papyrus'
+Plug 'nanotech/jellybeans.vim'
 call plug#end()
 
 set title
@@ -205,6 +206,12 @@ let g:gruvbox_contrast_dark = 'hard'
 colorscheme gruvbox
 set background=dark
 "set termguicolors  " When on, uses |highlight-guifg| and |highlight-guibg| attributes in the terminal (thus using 24-bit color).
+" }}}
+
+" ============================= JELLYBEANS COLOR SCHEME
+" {{{
+" https://github.com/nanotech/jellybeans.vim
+":colorscheme jellybeans
 " }}}
 
 " ============================ PAPYRUS

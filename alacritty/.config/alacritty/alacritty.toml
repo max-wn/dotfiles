@@ -1,7 +1,3 @@
-import = [
-"~/.local/share/alacritty/themes/xterm.toml",
-#"~/.local/share/alacritty/themes/blood_moon.toml",
-]
 
 [env]
 TERM = "alacritty"
@@ -28,3 +24,9 @@ multiplier = 3
 
 [window]
 title = "Alacritty"
+
+[general]
+import = [
+"~/.local/share/alacritty/themes/xterm.toml",
+#"~/.local/share/alacritty/themes/blood_moon.toml",
+]

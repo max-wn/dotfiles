@@ -566,7 +566,7 @@ external_editor = "nvim"
 #
 #colors_enabled = yes
 #
-#empty_tag_color = cyan
+empty_tag_color = cyan
 #
 #header_window_color = default
 #
