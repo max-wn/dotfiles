@@ -25,7 +25,8 @@ Plug 'gruvbox-community/gruvbox'
 "Plug 'vim-pandoc/vim-pandoc'
 "Plug 'vim-pandoc/vim-pandoc-syntax'
 "Plug 'abeleinin/papyrus'
-Plug 'nanotech/jellybeans.vim'
+"Plug 'nanotech/jellybeans.vim'
+Plug 'mipmip/vim-scimark'
 call plug#end()
 
 set title
