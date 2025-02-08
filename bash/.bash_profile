@@ -29,3 +29,4 @@ export HISTFILE="${XDG_STATE_HOME}"/bash/history    # bash history
 export GNUPGHOME="$XDG_DATA_HOME"/gnupg             # gnupg
 #export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java  # openjdk
 export TEXMFVAR="$XDG_CACHE_HOME"/texlive/texmf-var  # texmf
+export MBSYNCRC="$XDG_CONFIG_HOME"/isync/mbsyncrc   # mailsync for mutt-wizard
