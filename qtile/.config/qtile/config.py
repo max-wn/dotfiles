@@ -75,6 +75,8 @@ keys = [
     Key([], 'XF86AudioLowerVolume', lazy.spawn('pactl set-sink-volume @DEFAULT_SINK@ -5%')),
     Key([], 'XF86AudioRaiseVolume', lazy.spawn('pactl set-sink-volume @DEFAULT_SINK@ +5%')),
     Key([], 'XF86AudioMute', lazy.spawn('pactl set-sink-mute @DEFAULT_SINK@ toggle')),
+    # KeyboardLayout
+    Key([mod], "space", lazy.widget["keyboardlayout"].next_keyboard(), desc="Next keyboard layout."),
 ]
 
 groups = [Group(i) for i in "123456789"]
@@ -145,6 +147,8 @@ screens = [
                 # NB Systray is incompatible with Wayland, consider using StatusNotifier instead
                 #widget.StatusNotifier(),
                 widget.Systray(),
+                widget.KeyboardLayout(
+                    configured_keyboards=['us', 'ru', 'de']),
                 widget.TextBox("VOL:"),
                 widget.Volume(),
                 widget.CheckUpdates(

@@ -30,16 +30,18 @@ Plug 'mipmip/vim-scimark'
 call plug#end()
 
 set title
-set bg=light
+"set bg=light                "Adjusts the default color groups for that background type
 set go=a
-set mouse=a                        " Enable your mouse
+set mouse=a                 " Enable your mouse
 set nohlsearch
-set clipboard+=unnamedplus         " Copy paste between vim and everything
+set clipboard+=unnamedplus  " Copy paste between vim and everything
 set noshowmode
 set noruler
 set laststatus=0
 set noshowcmd
 "colorscheme vim
+set tw=80                   " Maximum width of text that is being inserted
+set cc=+1                   " Highlight column after 'textwidth'
 
 " Some basics:
 	nnoremap c "_c

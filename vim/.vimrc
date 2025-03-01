@@ -122,7 +122,7 @@ augroup END
     set nohlsearch             " no highlights all search patterns
     set hidden                 " buffer becomes hidden when it is abandoned.
     set showcmd                " display an incomplete command in the lower right corner
-	set clipboard^=unnamed,unnamedplus  " sets default clipboard to the system clipboard
+    set clipboard^=unnamed,unnamedplus  " sets default clipboard to the system clipboard
     "set backspace=indent,eol,start  " make backspace works like in most other programs
     set path+=**               " search down into subfolders with tab-completion
     set wildmenu               " display all matching files when we tab complete
