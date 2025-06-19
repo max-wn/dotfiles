@@ -31,7 +31,7 @@ call plug#end()
 
 set title
 "set bg=light                "Adjusts the default color groups for that background type
-set go=a
+"set go=a
 set mouse=a                 " Enable your mouse
 set nohlsearch
 set clipboard+=unnamedplus  " Copy paste between vim and everything
