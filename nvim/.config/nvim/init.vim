@@ -31,7 +31,6 @@ call plug#end()
 
 set title
 "set bg=light                "Adjusts the default color groups for that background type
-"set go=a
 set mouse=a                 " Enable your mouse
 set nohlsearch
 set clipboard+=unnamedplus  " Copy paste between vim and everything
@@ -73,7 +72,8 @@ set cc=+1                   " Highlight column after 'textwidth'
 	endif
 	let g:airline_symbols.colnr = ' C:'
 	let g:airline_symbols.linenr = ' L:'
-	let g:airline_symbols.maxlinenr = '☰ '
+	let g:airline_symbols.maxlinenr = ' '
+	let g:airline#extensions#whitespace#symbol = '!'
 
 " Shortcutting split navigation, saving a keypress:
 	map <C-h> <C-w>h
@@ -101,7 +101,7 @@ set cc=+1                   " Highlight column after 'textwidth'
 	map <leader>p :!opout "%:p"<CR>
 
 " Runs a script that cleans out tex build files whenever I close out of a .tex file.
-	autocmd VimLeave *.tex !texclear %
+	autocmd VimLeave *.tex !latexmk -c %
 
 " Ensure files are read as what I want:
 	let g:vimwiki_ext2syntax = {'.Rmd': 'markdown', '.rmd': 'markdown','.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
@@ -162,7 +162,7 @@ nnoremap <leader>h :call ToggleHiddenAll()<CR>
 " Here leader is ";".
 " So ":vs ;cfz" will expand into ":vs /home/<user>/.config/zsh/.zshrc"
 " if typed fast without the timeout.
-"silent! source ~/.config/nvim/shortcuts.vim
+" silent! source ${XDG_CONFIG_HOME:-$HOME/.config}/nvim/shortcuts.vim
 
 " MY SETTINGS which are different from Luke
 

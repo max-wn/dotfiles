@@ -28,6 +28,7 @@ from libqtile import bar, layout, widget
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
+# from libqtile.widget import backlight
 
 mod = "mod4"
 terminal = guess_terminal()
@@ -75,6 +76,11 @@ keys = [
     Key([], 'XF86AudioLowerVolume', lazy.spawn('pactl set-sink-volume @DEFAULT_SINK@ -5%')),
     Key([], 'XF86AudioRaiseVolume', lazy.spawn('pactl set-sink-volume @DEFAULT_SINK@ +5%')),
     Key([], 'XF86AudioMute', lazy.spawn('pactl set-sink-mute @DEFAULT_SINK@ toggle')),
+
+    # backlight
+    Key([], "XF86MonBrightnessUp", lazy.spawn("brightnessctl s 10%+")),
+    Key([], "XF86MonBrightnessDown", lazy.spawn("brightnessctl s 10%-")),
+
     # KeyboardLayout
     Key([mod], "space", lazy.widget["keyboardlayout"].next_keyboard(), desc="Next keyboard layout."),
 ]
@@ -147,6 +153,7 @@ screens = [
                 # NB Systray is incompatible with Wayland, consider using StatusNotifier instead
                 #widget.StatusNotifier(),
                 widget.Systray(),
+                # widget.Backlight(backlight_name='eDP'),
                 widget.KeyboardLayout(
                     configured_keyboards=['us', 'ru', 'de']),
                 widget.TextBox("VOL:"),
