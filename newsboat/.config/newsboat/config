@@ -1,5 +1,6 @@
 #show-read-feeds no
-auto-reload yes
+auto-reload yes     # automatically reload all feeds on startup
+#reload-threads 100  # loading of feeds in parallel for faster updates
 prepopulate-query-feeds yes
 save-path ~/attachments
 
@@ -34,22 +35,33 @@ bind-key D pb-download
 bind-key U show-urls
 bind-key x pb-delete
 
-color listnormal cyan default
-color listfocus black yellow standout bold
-color listnormal_unread blue default
-color listfocus_unread yellow default bold
-color info red black bold
-color article white default bold
+# Built in color schemes ---{{{
+#include /usr/share/doc/newsboat/contrib/colorschemes/greenscreen
+include /usr/share/doc/newsboat/contrib/colorschemes/gruvbox
+#include /usr/share/doc/newsboat/contrib/colorschemes/inkpot
+#include /usr/share/doc/newsboat/contrib/colorschemes/plain
+#include /usr/share/doc/newsboat/contrib/colorschemes/schleichfahrt
+#include /usr/share/doc/newsboat/contrib/colorschemes/universal-color
+# }}}
 
-highlight all "---.*---" yellow
+# Luke Smith's color scheme ---{{{
+#color listnormal cyan default
+#color listfocus black red standout bold
+#color listnormal_unread blue default
+#color listfocus_unread red default bold
+#color info red black bold
+#color article white default bold
+
+highlight all "---.*---" red
 highlight feedlist ".*(0/0))" black
-highlight article "(^Feed:.*|^Title:.*|^Author:.*)" cyan default bold
-highlight article "(^Link:.*|^Date:.*)" default default
-highlight article "https?://[^ ]+" green default
-highlight article "^(Title):.*$" blue default
-highlight article "\\[[0-9][0-9]*\\]" magenta default bold
-highlight article "\\[image\\ [0-9]+\\]" green default bold
-highlight article "\\[embedded flash: [0-9][0-9]*\\]" green default bold
-highlight article ":.*\\(link\\)$" cyan default
-highlight article ":.*\\(image\\)$" blue default
-highlight article ":.*\\(embedded flash\\)$" magenta default
+#highlight article "(^Feed:.*|^Title:.*|^Author:.*)" cyan default bold
+#highlight article "(^Link:.*|^Date:.*)" default default
+#highlight article "https?://[^ ]+" green default
+#highlight article "^(Title):.*$" blue default
+#highlight article "\\[[0-9][0-9]*\\]" magenta default bold
+#highlight article "\\[image\\ [0-9]+\\]" green default bold
+#highlight article "\\[embedded flash: [0-9][0-9]*\\]" green default bold
+#highlight article ":.*\\(link\\)$" cyan default
+#highlight article ":.*\\(image\\)$" blue default
+#highlight article ":.*\\(embedded flash\\)$" magenta default
+# }}}

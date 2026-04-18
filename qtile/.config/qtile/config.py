@@ -128,7 +128,8 @@ layouts = [
 ]
 
 widget_defaults = dict(
-    font="JetBrains Mono",
+    #font="JetBrains Mono",
+    font="Terminus",
     fontsize=14,
     padding=3,
 )

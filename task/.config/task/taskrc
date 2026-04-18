@@ -28,8 +28,8 @@ hooks.location=~/.local/share/task/hooks
 #include light-256.theme
 #include dark-16.theme
 #include dark-256.theme
-#include dark-red-256.theme
-include dark-green-256.theme
+include dark-red-256.theme
+#include dark-green-256.theme
 #include dark-blue-256.theme
 #include dark-violets-256.theme
 #include dark-yellow-green.theme
@@ -39,3 +39,4 @@ include dark-green-256.theme
 #include solarized-light-256.theme
 #include no-color.theme
 regex=on
+news.version=3.4.2
